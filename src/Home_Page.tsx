@@ -30,7 +30,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg flex items-center justify-center"
                 >
-                  Get Ka'Starta Loan
+                  Emerald Finance Site
                 </a>
                 <button 
                   onClick={() => window.open('/Emerald Finance Pitch Deck - presentation.pdf', '_blank')}
