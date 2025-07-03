@@ -256,9 +256,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
               <p className="text-xl opacity-90 leading-relaxed">
                 Empowering underserved communities with fair, reliable credit through innovative digital channels. Access loans instantly via mobile money.
               </p>
-              <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              {/* <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 Get Ka'Starta Loan
-              </button>
+              </button> */}
             </div>
             
             <div className="animate-fade-in-right">
