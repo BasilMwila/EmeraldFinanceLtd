@@ -61,7 +61,7 @@ const PhoneSlideshow: React.FC = () => {
 
   useEffect(() => {
     if (!isPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
@@ -85,16 +85,16 @@ const PhoneSlideshow: React.FC = () => {
     <div className="relative">
       <div className="w-[300px] h-[600px] bg-gradient-to-br from-slate-800 to-black rounded-[30px] mx-auto relative shadow-2xl overflow-hidden">
         <div className="w-[260px] h-[520px] bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-[20px] mx-auto mt-10 relative flex flex-col items-center justify-center text-white font-bold overflow-hidden">
-          
+
           {/* Navigation arrows */}
-          <button 
+          <button
             onClick={prevSlide}
             className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all z-10"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
-          
-          <button 
+
+          <button
             onClick={nextSlide}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all z-10"
           >
@@ -122,19 +122,19 @@ const PhoneSlideshow: React.FC = () => {
             <div className="text-yellow-400 text-2xl mb-2 drop-shadow-lg">
               Ka'Starta
             </div>
-            
+
             <div className={`inline-block px-3 py-1 rounded-full text-xs mb-4 ${
-              currentSlideData.provider === 'airtel' 
-                ? 'bg-red-500/80 text-white' 
+              currentSlideData.provider === 'airtel'
+                ? 'bg-red-500/80 text-white'
                 : 'bg-yellow-500/80 text-black'
             }`}>
               {currentSlideData.provider === 'airtel' ? 'Airtel Money' : 'MTN MoMo'}
             </div>
-            
+
             <h3 className="text-lg font-bold mb-4 text-yellow-400">
               {currentSlideData.title}
             </h3>
-            
+
             <div className="space-y-2 text-sm">
               {currentSlideData.content.map((step, index) => (
                 <div key={index} className="flex items-start gap-2">
@@ -145,7 +145,7 @@ const PhoneSlideshow: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-4 text-xs opacity-80">
               {currentSlideData.type === 'apply' ? '📱 Quick Application' : '💰 Easy Repayment'}
             </div>
@@ -187,8 +187,8 @@ const EmeraldFinanceHomepage: React.FC = () => {
     <div className="font-sans text-slate-800 overflow-x-hidden">
       {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isHeaderVisible 
-          ? 'bg-gradient-to-r from-slate-800 to-emerald-800' 
+        isHeaderVisible
+          ? 'bg-gradient-to-r from-slate-800 to-emerald-800'
           : 'bg-slate-800/95 backdrop-blur-lg'
       } shadow-lg`}>
         <nav className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
@@ -246,7 +246,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
             <circle cx="50" cy="50" r="45" fill="#fff" />
           </svg>
         </div>
-        
+
         <div className="max-w-6xl mx-auto px-5 py-20">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="text-white space-y-6 animate-fade-in-left">
@@ -260,7 +260,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                 Get Ka'Starta Loan
               </button> */}
             </div>
-            
+
             <div className="animate-fade-in-right">
               <PhoneSlideshow />
             </div>
@@ -275,22 +275,22 @@ const EmeraldFinanceHomepage: React.FC = () => {
             About Emerald Finance
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6 text-lg leading-relaxed">
               <p>
                 Founded in <span className="text-emerald-600 font-bold">2020</span> and licensed by the Bank of Zambia, Emerald Finance Limited is a leading microfinance institution based in <span className="text-emerald-600 font-bold">Lusaka</span>. We are dedicated to serving Zambia's underserved populations by providing fair and reliable credit through innovative digital channels.
               </p>
-              
+
               <p>
                 Our headquarters is strategically located at the intersection of Kwacha Rd and Parliament Rd | Olympia in Lusaka, positioning us at the heart of Zambia's economic center.
               </p>
-              
+
               <p>
                 We specialize in digital micro-lending under our flagship brand <span className="text-emerald-600 font-bold">Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6">
               {[
                 { number: "2020", label: "Founded" },
@@ -315,7 +315,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
             Our Services
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -380,7 +380,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
             Leadership Team
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { name: "Kabeke Mulenga", role: "Chief Executive Officer", initials: "KM" },
@@ -404,11 +404,11 @@ const EmeraldFinanceHomepage: React.FC = () => {
       <section id="contact" className="py-20 bg-gradient-to-br from-emerald-800 to-slate-800 text-white">
         <div className="max-w-6xl mx-auto px-5">
           <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h3 className="text-yellow-400 text-2xl font-bold mb-6">Contact Information</h3>
-              
+
               {[
                 {
                   icon: <MapPin className="w-6 h-6" />,
@@ -437,7 +437,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="text-center">
               <h3 className="text-yellow-400 text-2xl font-bold mb-6">Access Ka'Starta Loans</h3>
               <p className="mb-6 text-lg">Get instant access to micro-loans using our USSD code :</p>
