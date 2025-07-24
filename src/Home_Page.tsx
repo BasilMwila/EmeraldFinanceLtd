@@ -246,11 +246,11 @@ const EmeraldFinanceHomepage: React.FC = () => {
           }}
         ></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <h2 className="text-5xl font-bold text-emerald-800 mb-6">
             Strategic<br />Partnership
           </h2>
-          <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-12 max-w-2xl text-left">
             We've partnered with leading mobile money providers to expand credit access throughout Zambia.
           </p>
 
@@ -272,25 +272,25 @@ const EmeraldFinanceHomepage: React.FC = () => {
               />
             </div>
 
-            <div className="bg-red-600 w-48 h-32 flex items-center justify-center shadow-lg">
+            <div className="bg-red-550 w-48 h-32 flex">
               <img 
                 src="/Airtel_Logo.jpg" 
                 alt="Airtel Logo" 
-                className="h-20 w-auto object-contain"
+                className="h-32 w-40"
               />
             </div>
 
-            <div className="bg-slate-600 p-6 rounded-lg w-48 h-32 flex items-center justify-center shadow-lg">
+            <div className="bg-slate-550 w-48 h-32 flex ">
               <img 
                 src="/Ezra_Logo.jpg" 
                 alt="Ezra Logo" 
-                className="h-20 w-auto object-contain"
+                className="h-32 w-40 "
               />
             </div>
           </div>
 
           {/* Partner Labels */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mt-4 mr-12">
             <div className="text-gray-700 font-medium">Emerald Finance</div>
             <div className="text-gray-700 font-medium">MTN MoMo</div>
             <div className="text-gray-700 font-medium">Airtel Money</div>
@@ -298,6 +298,59 @@ const EmeraldFinanceHomepage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* What We Do Section */}
+      <section id="services" className="py-20 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/what_we_do.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                What We Do
+              </h2>
+              <p className="text-lg mb-8 opacity-90">company services</p>
+              
+              <div className="mb-12">
+                <h3 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-6">
+                  Ka'Starta<br />
+                  Mobile Loans
+                </h3>
+                <p className="text-lg leading-relaxed mb-8">
+                  Access instant micro-loans through our mobile app and USSD <span className="text-yellow-400 font-semibold">code *115#</span>. Quick approval, flexible repayment terms, and seamless integration with mobile money platforms.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Content - Eligibility */}
+            <div className="relative">
+              {/* Red accent box */}
+              <div className="absolute top-0 right-0 bg-red-600 text-white p-8 rounded-lg shadow-lg max-w-sm z-10">
+                <div className="text-6xl mb-4 opacity-20">"</div>
+                <h3 className="text-2xl font-bold mb-4">Who is eligible?</h3>
+                <p className="text-lg leading-relaxed">
+                  An applicant for a loan under the Service must be <span className="font-bold">eighteen (18+)</span> years old or over to qualify.
+                </p>
+              </div>
+              
+              {/* Background decoration */}
+              <div className="mt-16 mr-16">
+                <div className="w-72 h-96 bg-emerald-600 rounded-lg opacity-20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Partnership Section */}
+      <section className="py-20 relative"></section>
     </div>
   );
 };
