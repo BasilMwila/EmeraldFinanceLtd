@@ -72,15 +72,6 @@ const EmeraldFinanceHomepage: React.FC = () => {
         </div>
       </header>
 
-      {/* Subheader */}
-      {/* <div className="bg-gray-100 py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-gray-600">
-            Emerald Finance is a Fintech company regulated by bank of Zambia.
-          </p>
-        </div>
-      </div> */}
-
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen">
         {/* Background Image */}
@@ -265,33 +256,36 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
           {/* Partner Logos */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-            <div className="bg-black p-6 rounded-lg w-48 h-32 flex items-center justify-center">
+            <div className="bg-black w-48 h-32 flex items-center justify-center shadow-lg">
               <img 
-                src="/Emerald_Logo_Web1.png" 
+                src="/EMERALD_LOGO.jpg" 
                 alt="Emerald Finance Logo" 
-                className="h-24 w-auto"
+                className="h-20 w-auto object-contain"
               />
             </div>
 
-            <div className="bg-yellow-400 p-6 rounded-lg w-48 h-32 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-800 mb-1">📱</div>
-                <div className="text-blue-800 font-bold text-lg">MoMo</div>
-                <div className="text-blue-800 text-sm">From MTN</div>
-              </div>
+            <div className="bg-yellow-400 w-48 h-32 flex items-center justify-center shadow-lg">
+              <img 
+                src="/MTN_Logo.jpg" 
+                alt="MTN Logo" 
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
-            <div className="bg-red-600 p-6 rounded-lg w-48 h-32 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-white text-5xl font-bold">airtel</div>
-                <div className="text-yellow-400 text-lg font-bold">money</div>
-              </div>
+            <div className="bg-red-600 w-48 h-32 flex items-center justify-center shadow-lg">
+              <img 
+                src="/Airtel_Logo.jpg" 
+                alt="Airtel Logo" 
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
-            <div className="bg-teal-700 p-6 rounded-lg w-48 h-32 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-white font-bold text-2xl">EZRA</div>
-              </div>
+            <div className="bg-slate-600 p-6 rounded-lg w-48 h-32 flex items-center justify-center shadow-lg">
+              <img 
+                src="/Ezra_Logo.jpg" 
+                alt="Ezra Logo" 
+                className="h-20 w-auto object-contain"
+              />
             </div>
           </div>
 
