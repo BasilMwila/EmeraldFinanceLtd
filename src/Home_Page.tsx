@@ -300,57 +300,325 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* What We Do Section */}
-      <section id="services" className="py-20 relative">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/what_we_do.jpg')`
-          }}
-        ></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div className="text-white">
-              <h2 className="text-5xl md:text-6xl font-bold mb-6">
-                What We Do
-              </h2>
-              <p className="text-lg mb-8 opacity-90">company services</p>
-              
-              <div className="mb-12">
-                <h3 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-6">
-                  Ka'Starta<br />
-                  Mobile Loans
-                </h3>
-                <p className="text-lg leading-relaxed mb-8">
-                  Access instant micro-loans through our mobile app and USSD <span className="text-yellow-400 font-semibold">code *115#</span>. Quick approval, flexible repayment terms, and seamless integration with mobile money platforms.
-                </p>
+      <section className="bg-gradient-to-r from-[#002f4b] via-[#005d8f] to-[#ffffff] py-16 px-6 md:px-20 text-white">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    
+    {/* Individual & Agent Lending */}
+    <div className="bg-blue-900 bg-opacity-60 p-6 rounded-lg shadow-lg">
+      <div className="flex items-center space-x-4 mb-6">
+        <div className="bg-yellow-400 p-4 rounded-md">
+          {/* Replace emoji with actual SVG/icon component */}
+          <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-yellow-400 font-bold text-xl">
+            👥
+          </div>
+        </div>
+        <h2 className="text-3xl font-bold text-yellow-400 leading-tight">
+          Individual & Agent <br /> Lending
+        </h2>
+      </div>
+      <p className="text-white text-base leading-relaxed">
+        Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia’s entrepreneurs and provide customized financial solutions.
+      </p>
+      <div className="mt-6 h-2 bg-yellow-300 w-32 rounded"></div>
+    </div>
+
+    {/* Merchant Financing */}
+    <div className="bg-blue-900 bg-opacity-60 p-6 rounded-lg shadow-lg">
+      <div className="flex items-center space-x-4 mb-6">
+        <div className="bg-green-800 p-4 rounded-md">
+          {/* Replace emoji with actual SVG/icon component */}
+          <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-green-900 font-bold text-xl">
+            🏪
+          </div>
+        </div>
+        <h2 className="text-3xl font-bold text-yellow-400 leading-tight">
+          Merchant <br /> Financing
+        </h2>
+      </div>
+      <p className="text-white text-base leading-relaxed">
+        Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+      {/* How To Section */}
+      <section id="how-to" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-5xl font-bold text-emerald-800 text-center mb-16">How To Access Ka'Starta Loans</h2>
+          
+          {/* Airtel Money Instructions */}
+          <div className="mb-20">
+            <div className="relative bg-red-600 rounded-lg overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700"></div>
+              <div className="relative z-10 p-12">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div className="text-white">
+                    <div className="inline-block bg-red-500 text-white px-6 py-2 rounded-full mb-6 text-lg font-semibold">
+                      Your Phone
+                    </div>
+                    <h3 className="text-4xl font-bold mb-4">
+                      How to Register for a Ka'Starta loan on Airtel Money.
+                    </h3>
+                    <p className="text-xl mb-8">Available 24/7 through mobile money and smartphone access.</p>
+                    <div className="bg-red-700 px-6 py-3 rounded text-white font-semibold inline-block">
+                      Please Follow These Steps:
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-4">
+                    {/* Phone Screen 1 */}
+                    <div className="bg-white rounded-lg p-4 text-black">
+                      <div className="text-center mb-4">
+                        <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm inline-block mb-2">
+                          Dial *115#
+                        </div>
+                      </div>
+                      <div className="text-sm space-y-2">
+                        <p>Terms and Conditions apply for Ka'Starta Loans.</p>
+                        <p className="font-semibold">1. Accept</p>
+                        <p>Exit</p>
+                      </div>
+                    </div>
+
+                    {/* Phone Screen 2 */}
+                    <div className="bg-white rounded-lg p-4 text-black">
+                      <div className="text-sm space-y-2">
+                        <p>Enter your PIN to <span className="font-semibold">opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+                        <p>For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
+                      </div>
+                    </div>
+
+                    {/* Phone Screen 3 */}
+                    <div className="bg-white rounded-lg p-4 text-black">
+                      <div className="text-sm space-y-2">
+                        <p>Thank you for opting-in and for accepting the terms and conditions.</p>
+                        <p>Please <span className="font-semibold">redial *115#</span> to apply for a loan.</p>
+                        <p>T and C's: kastarta.com/</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* MTN Instructions */}
+          <div className="mb-20">
+            <div className="relative bg-yellow-400 rounded-lg overflow-hidden">
+              <div className="relative z-10 p-12">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div className="text-black">
+                    <div className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full mb-6 text-lg font-semibold">
+                      Your Phone
+                    </div>
+                    <h3 className="text-4xl font-bold mb-4">
+                      How to Register for a Ka'Starta loan on MTN.
+                    </h3>
+                    <div className="bg-yellow-500 px-6 py-3 rounded text-white font-semibold inline-block">
+                      Please Follow These Steps:
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-4 gap-3">
+                    {/* Phone Screens for MTN */}
+                    <div className="bg-white rounded-lg p-3 text-black text-sm">
+                      <p className="font-semibold mb-2">Menu</p>
+                      <div className="space-y-1">
+                        <p>1. Send money</p>
+                        <p>2. Withdraw Cash</p>
+                        <p>3. Pay Bill</p>
+                        <p>4. Airtime & Bundles</p>
+                        <p>5. MoMoPay</p>
+                        <p className="font-semibold">6. Kongola & Savings</p>
+                        <p>7. Banking Services</p>
+                        <p>8. Pin Reset</p>
+                        <p>9. My Account</p>
+                        <p>00. Next</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-lg p-3 text-black text-sm">
+                      <p>Welcome to the Kongola & Savings service.</p>
+                      <div className="space-y-1 mt-2">
+                        <p className="font-semibold">1. Kongola</p>
+                        <p>2. Savings</p>
+                        <p>3. 0. Back</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-lg p-3 text-black text-sm">
+                      <p>Please select Loan service.</p>
+                      <div className="space-y-1 mt-2">
+                        <p>1. Kasara Loans</p>
+                        <p>2. XtraCash Loans</p>
+                        <p>3. Kongola Ka Phone</p>
+                        <p>4. Xpress Loans by Zanaco</p>
+                        <p className="font-semibold">5. Ka'Starta</p>
+                        <p>0. Back</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-lg p-3 text-black text-sm">
+                      <p>Terms and Conditions apply for Ka'Starta Loans.</p>
+                      <p className="font-semibold mt-2">1. Accept</p>
+                      <p>Exit</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Loan Process Steps */}
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Getting a Loan */}
+            <div className="bg-gray-100 rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-emerald-800 mb-6">How to Get a Loan</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <p>Welcome to Ka'Starta loan service</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <p>Choose your loan amount: K100-fee: K10 +K0.3 daily or K50-fee: K5 +K0.15 daily</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                  <p>Enter your MM PIN number to confirm</p>
+                </div>
               </div>
             </div>
 
-            {/* Right Content - Eligibility */}
-            <div className="relative">
-              {/* Red accent box */}
-              <div className="absolute top-0 right-0 bg-red-600 text-white p-8 rounded-lg shadow-lg max-w-sm z-10">
-                <div className="text-6xl mb-4 opacity-20">"</div>
-                <h3 className="text-2xl font-bold mb-4">Who is eligible?</h3>
-                <p className="text-lg leading-relaxed">
-                  An applicant for a loan under the Service must be <span className="font-bold">eighteen (18+)</span> years old or over to qualify.
-                </p>
-              </div>
-              
-              {/* Background decoration */}
-              <div className="mt-16 mr-16">
-                <div className="w-72 h-96 bg-emerald-600 rounded-lg opacity-20"></div>
+            {/* Repaying a Loan */}
+            <div className="bg-emerald-50 rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-emerald-800 mb-6">How to Repay</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">1</div>
+                  <p>Access Ka'Starta loan service via *115#</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">2</div>
+                  <p>Select "Repay Loan" option</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">3</div>
+                  <p>Enter repayment amount and confirm with PIN</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Strategic Partnership Section */}
-      <section className="py-20 relative"></section>
+      {/* Our Team Section */}
+      <section id="our-team" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-5xl font-bold text-emerald-800 mb-4">Meet Our Team</h2>
+          <p className="text-xl text-gray-600 mb-16">Introducing the team</p>
+          
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Team Members */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Row 1 */}
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Kabeke Mulenga</h3>
+                <p className="text-gray-600">Chief Executive Officer</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Joseph Mubambe</h3>
+                <p className="text-gray-600">Chief Financial Officer</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Chibuye Susa</h3>
+                <p className="text-gray-600">Business Development Manager</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Basil Mwila</h3>
+                <p className="text-gray-600">Data and Systems Manager | Head of I.T</p>
+              </div>
+
+              {/* Row 2 */}
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Elizabeth Mubanga</h3>
+                <p className="text-gray-600">Customer care Representative</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Stephanie Chilande</h3>
+                <p className="text-gray-600">Customer care Representative</p>
+              </div>
+            </div>
+
+            {/* Company Quote */}
+            <div className="bg-emerald-600 p-12 rounded-lg text-white">
+              <div className="text-8xl mb-6 opacity-20">"</div>
+              <h3 className="text-3xl font-bold mb-6">At Emerald Finance</h3>
+              <p className="text-lg leading-relaxed">
+                In a world of decimals and deadlines, we're the emeralds in the rough: refined, resilient, and just a little bit brilliant.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Us Section */}
+      <section id="contact-us" className="py-20 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/contact_bg.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-white">
+            <h2 className="text-5xl font-bold mb-8">Contact Information</h2>
+            <div className="space-y-6 text-lg">
+              <p className="text-xl leading-relaxed">
+                Our headquarters is strategically located at the intersection of Kwacha Road and Parliament Road 
+                Olympia in Lusaka, positioning us at the heart of Zambia's economic center.
+              </p>
+              
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold mb-4">Address:</h3>
+                <p className="text-xl">
+                  Plot No. 5038 Kwacha Road and Parliament Road | Olympia, Lusaka, Zambia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer className="bg-emerald-800 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white text-lg">ka' starta ka bonse. Finance for all.</p>
+        </div>
+      </footer>
     </div>
   );
 };
