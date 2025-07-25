@@ -26,7 +26,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               />
             </div>
 
-            {/* Desktop Navigation */}ut
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
               {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => (
                 <button
