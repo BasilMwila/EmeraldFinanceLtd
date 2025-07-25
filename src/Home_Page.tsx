@@ -26,7 +26,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               />
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation */}ut
             <nav className="hidden md:flex space-x-8">
               {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => (
                 <button
@@ -155,27 +155,38 @@ const EmeraldFinanceHomepage: React.FC = () => {
             </div>
 
             {/* Right Content - Stats Cards */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-yellow-400 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-white mb-2">2020</div>
-                <div className="text-white font-semibold">Founded</div>
-                <div className="mt-4">
-                  <ChevronRight className="w-6 h-6 text-white mx-auto" />
-                </div>
-              </div>
-              <div className="bg-emerald-600 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                <div className="text-white font-semibold">Mobile<br />Access</div>
-              </div>
-              <div className="bg-emerald-600 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-white mb-2">*115#</div>
-                <div className="text-white font-semibold">USSD<br />Access</div>
-              </div>
-              <div className="bg-yellow-400 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-white mb-2">100%</div>
-                <div className="text-white font-semibold">Digital<br />Process</div>
-              </div>
-            </div>
+           <div className="grid grid-cols-2 gap-6">
+  <div className="border-2 border-white p-4 rounded-tl-2xl">
+    <div className="bg-yellow-400 p-6 rounded-lg text-center">
+      <div className="text-3xl font-bold text-white mb-2">2020</div>
+      <div className="text-white font-semibold">Founded</div>
+      <div className="mt-4">
+        <ChevronRight className="w-6 h-6 text-white mx-auto" />
+      </div>
+    </div>
+  </div>
+  
+  <div className="border-6 border-white p-4">
+    <div className="bg-emerald-600 p-6 rounded-lg text-center">
+      <div className="text-3xl font-bold text-white mb-2">24/7</div>
+      <div className="text-white font-semibold">Mobile<br />Access</div>
+    </div>
+  </div>
+  
+  <div className="border-6 border-white p-4">
+    <div className="bg-emerald-600 p-6 rounded-lg text-center">
+      <div className="text-3xl font-bold text-white mb-2">*115#</div>
+      <div className="text-white font-semibold">USSD<br />Access</div>
+    </div>
+  </div>
+  
+  <div className="border-2 border-white p-4 rounded-br-2xl">
+    <div className="bg-yellow-400 p-6 rounded-lg text-center">
+      <div className="text-3xl font-bold text-white mb-2">100%</div>
+      <div className="text-white font-semibold">Digital<br />Process</div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </section>
