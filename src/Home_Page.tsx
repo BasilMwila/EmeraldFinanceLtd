@@ -311,48 +311,53 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="bg-gradient-to-r from-[#002f4b] via-[#005d8f] to-[#ffffff] py-16 px-6 md:px-20 text-white">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-    
-    {/* Individual & Agent Lending */}
-    <div className="bg-blue-900 bg-opacity-60 p-6 rounded-lg shadow-lg">
-      <div className="flex items-center space-x-4 mb-6">
-        <div className="bg-yellow-400 p-4 rounded-md">
-          {/* Replace emoji with actual SVG/icon component */}
-          <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-yellow-400 font-bold text-xl">
-            👥
-          </div>
+      <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{  backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.4), rgba(0, 0, 0, 0)), url('/what_we_do.jpg')` }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-opacity-40"></div>
+      
+      {/* Main content */}
+      <div className="relative z-10 flex items-center min-h-screen px-8 lg:px-16">
+        <div className="max-w-2xl text-white">
+          {/* Company services label */}
+          
+          
+          {/* Main heading */}
+          <h1 className="text-5xl lg:text-6xl font-bold mb-4">
+            What We Do
+          </h1>
+          <p className="text-lg mb-4 opacity-90">company services</p>
+          
+          {/* Service name */}
+          <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-8">
+            Ka'Starta<br />
+            Mobile Loans
+          </h2>
+          
+          {/* Description */}
+          <p className="text-lg lg:text-xl leading-relaxed mb-8">
+            Access instant micro-loans through our mobile app and USSD{' '}
+            <span className="text-yellow-400 font-semibold">code *115#</span>. Quick 
+            approval, flexible repayment terms, and seamless integration with mobile money 
+            platforms.
+          </p>
+          
+          {/* Red accent bar */}
+          <div className="w-32 h-1 bg-red-500"></div>
         </div>
-        <h2 className="text-3xl font-bold text-yellow-400 leading-tight">
-          Individual & Agent <br /> Lending
-        </h2>
       </div>
-      <p className="text-white text-base leading-relaxed">
-        Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia’s entrepreneurs and provide customized financial solutions.
-      </p>
-      <div className="mt-6 h-2 bg-yellow-300 w-32 rounded"></div>
-    </div>
-
-    {/* Merchant Financing */}
-    <div className="bg-blue-900 bg-opacity-60 p-6 rounded-lg shadow-lg">
-      <div className="flex items-center space-x-4 mb-6">
-        <div className="bg-green-800 p-4 rounded-md">
-          {/* Replace emoji with actual SVG/icon component */}
-          <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-green-900 font-bold text-xl">
-            🏪
-          </div>
-        </div>
-        <h2 className="text-3xl font-bold text-yellow-400 leading-tight">
-          Merchant <br /> Financing
-        </h2>
+      
+      {/* Eligible image in top right corner */}
+      <div className="absolute top-8 right-8 z-20">
+        <img 
+          src="Eligible.png" 
+          alt="Who is eligible" 
+          className="w-64 h-auto shadow-lg"
+        />
       </div>
-      <p className="text-white text-base leading-relaxed">
-        Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
-      </p>
-    </div>
-  </div>
-</section>
-
+    </section>
 
       {/* How To Section */}
       <section id="how-to" className="py-20 bg-white">
