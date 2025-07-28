@@ -253,7 +253,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/strategic_page.jpg')`
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/strategic_page.jpg')`
           }}
         ></div>
         
@@ -313,7 +313,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* What We Do Section */}
       <section 
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{  backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.4), rgba(0, 0, 0, 0)), url('/what_we_do.jpg')` }}
+      style={{  backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.6), rgba(0, 0, 0, 0)), url('/what_we_do.jpg')` }}
     >
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-opacity-40"></div>
@@ -359,176 +359,217 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </div>
     </section>
 
-      {/* How To Section */}
-      <section id="how-to" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-emerald-800 text-center mb-16">How To Access Ka'Starta Loans</h2>
+    <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/about_page.jpg')` }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-opacity-50"></div>
+      
+      {/* Main content */}
+      <div className="relative z-10 flex items-center min-h-screen px-8 lg:px-16">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            {/* Individual & Agent Lending */}
+            <div className="text-white">
+              {/* Icon container */}
+             <div className="text-white">
+  {/* Icon container */}
+  <div className="mb-8">
+    <div className=" w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden">
+      <img 
+        src="user_avatar.png" 
+        alt="Individual and Agent Lending" 
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+              
+              {/* Heading */}
+              <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 leading-tight">
+                Individual & Agent<br />
+                Lending
+              </h2>
+              
+              {/* Description */}
+              <p className="text-lg lg:text-xl leading-relaxed text-gray-200">
+                Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia's entrepreneurs and provide customized financial solutions.
+              </p>
+            </div>
+            
+            {/* Merchant Financing */}
+            <div className="text-white">
+              {/* Icon container */}
+              <div className="mb-8">
+                <div className="w-40 h-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm">
+                  <img 
+                    src="merchat.png" 
+                    alt="Merchant Financing" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              
+              {/* Heading */}
+              <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 leading-tight">
+                Merchant<br />
+                Financing
+              </h2>
+              
+              {/* Description */}
+              <p className="text-lg lg:text-xl leading-relaxed text-gray-200">
+                Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
+              </p>
+            </div>
+            
+          </div>
           
-          {/* Airtel Money Instructions */}
-          <div className="mb-20">
-            <div className="relative bg-red-600 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700"></div>
-              <div className="relative z-10 p-12">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div className="text-white">
-                    <div className="inline-block bg-red-500 text-white px-6 py-2 rounded-full mb-6 text-lg font-semibold">
-                      Your Phone
-                    </div>
-                    <h3 className="text-4xl font-bold mb-4">
-                      How to Register for a Ka'Starta loan on Airtel Money.
-                    </h3>
-                    <p className="text-xl mb-8">Available 24/7 through mobile money and smartphone access.</p>
-                    <div className="bg-red-700 px-6 py-3 rounded text-white font-semibold inline-block">
-                      Please Follow These Steps:
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4">
-                    {/* Phone Screen 1 */}
-                    <div className="bg-white rounded-lg p-4 text-black">
-                      <div className="text-center mb-4">
-                        <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm inline-block mb-2">
-                          Dial *115#
-                        </div>
-                      </div>
-                      <div className="text-sm space-y-2">
-                        <p>Terms and Conditions apply for Ka'Starta Loans.</p>
-                        <p className="font-semibold">1. Accept</p>
-                        <p>Exit</p>
-                      </div>
-                    </div>
-
-                    {/* Phone Screen 2 */}
-                    <div className="bg-white rounded-lg p-4 text-black">
-                      <div className="text-sm space-y-2">
-                        <p>Enter your PIN to <span className="font-semibold">opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
-                        <p>For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
-                      </div>
-                    </div>
-
-                    {/* Phone Screen 3 */}
-                    <div className="bg-white rounded-lg p-4 text-black">
-                      <div className="text-sm space-y-2">
-                        <p>Thank you for opting-in and for accepting the terms and conditions.</p>
-                        <p>Please <span className="font-semibold">redial *115#</span> to apply for a loan.</p>
-                        <p>T and C's: kastarta.com/</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Accent bar - positioned at bottom left */}
+          <div className="mt-16 lg:mt-20">
+            <div className="w-96 h-1 bg-yellow-600"></div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          {/* MTN Instructions */}
-          <div className="mb-20">
-            <div className="relative bg-yellow-400 rounded-lg overflow-hidden">
-              <div className="relative z-10 p-12">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div className="text-black">
-                    <div className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full mb-6 text-lg font-semibold">
-                      Your Phone
-                    </div>
-                    <h3 className="text-4xl font-bold mb-4">
-                      How to Register for a Ka'Starta loan on MTN.
-                    </h3>
-                    <div className="bg-yellow-500 px-6 py-3 rounded text-white font-semibold inline-block">
-                      Please Follow These Steps:
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-4 gap-3">
-                    {/* Phone Screens for MTN */}
-                    <div className="bg-white rounded-lg p-3 text-black text-sm">
-                      <p className="font-semibold mb-2">Menu</p>
-                      <div className="space-y-1">
-                        <p>1. Send money</p>
-                        <p>2. Withdraw Cash</p>
-                        <p>3. Pay Bill</p>
-                        <p>4. Airtime & Bundles</p>
-                        <p>5. MoMoPay</p>
-                        <p className="font-semibold">6. Kongola & Savings</p>
-                        <p>7. Banking Services</p>
-                        <p>8. Pin Reset</p>
-                        <p>9. My Account</p>
-                        <p>00. Next</p>
-                      </div>
-                    </div>
+      <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/friends.jpg')` }}
+    >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-opacity-40"></div>
+      
+      {/* Puzzle icon in top left corner */}
+      <div className="absolute top-15 left-48 z-20">
+        <div className="w-48 h-48 rounded-tl-2xl border-white border-2 bg-opacity-100 backdrop-blur-sm">
+          <img 
+            src="puzzle.png" 
+            alt="Integration puzzle" 
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
+      
+      {/* Main content */}
+      <div className="relative z-10 flex items-center min-h-screen px-8 lg:px-16">
+        <div className="max-w-2xl text-white mt-16 lg:mt-0">
+          {/* Main heading */}
+          <h1 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-8 leading-tight">
+            Mobile Money<br />
+            Integration
+          </h1>
+          
+          {/* Description */}
+          <p className="text-lg lg:text-xl leading-relaxed mb-8">
+            Seamless integration with popular mobile money platforms.{' '}
+            <span className="text-yellow-400 font-semibold">
+              Request loans, receive funds, and make repayments
+            </span>{' '}
+            all through your mobile phone.
+          </p>
+          
+          {/* Red accent bar */}
+          <div className="w-32 h-1 bg-red-500"></div>
+        </div>
+      </div>
+      
+      {/* Eligible image in top right corner */}
+      <div className="absolute top-8 right-8 z-20">
+        <img 
+          src="Eligible2.png" 
+          alt="Who is eligible" 
+          className="w-64 h-auto shadow-lg"
+        />
+      </div>
+    </section>
 
-                    <div className="bg-white rounded-lg p-3 text-black text-sm">
-                      <p>Welcome to the Kongola & Savings service.</p>
-                      <div className="space-y-1 mt-2">
-                        <p className="font-semibold">1. Kongola</p>
-                        <p>2. Savings</p>
-                        <p>3. 0. Back</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-white rounded-lg p-3 text-black text-sm">
-                      <p>Please select Loan service.</p>
-                      <div className="space-y-1 mt-2">
-                        <p>1. Kasara Loans</p>
-                        <p>2. XtraCash Loans</p>
-                        <p>3. Kongola Ka Phone</p>
-                        <p>4. Xpress Loans by Zanaco</p>
-                        <p className="font-semibold">5. Ka'Starta</p>
-                        <p>0. Back</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-white rounded-lg p-3 text-black text-sm">
-                      <p>Terms and Conditions apply for Ka'Starta Loans.</p>
-                      <p className="font-semibold mt-2">1. Accept</p>
-                      <p>Exit</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Loan Process Steps */}
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Getting a Loan */}
-            <div className="bg-gray-100 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-emerald-800 mb-6">How to Get a Loan</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
-                  <p>Welcome to Ka'Starta loan service</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
-                  <p>Choose your loan amount: K100-fee: K10 +K0.3 daily or K50-fee: K5 +K0.15 daily</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
-                  <p>Enter your MM PIN number to confirm</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Repaying a Loan */}
-            <div className="bg-emerald-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-emerald-800 mb-6">How to Repay</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">1</div>
-                  <p>Access Ka'Starta loan service via *115#</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">2</div>
-                  <p>Select "Repay Loan" option</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold">3</div>
-                  <p>Enter repayment amount and confirm with PIN</p>
-                </div>
+      {/* How To Section */}
+       <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('steps.jpg')" }}
+    >
+      {/* Red gradient overlay from left to right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+      
+      {/* Main content - Flex layout for left-right split */}
+      <div className="relative z-10 min-h-screen flex">
+        
+        {/* Left Side - Text Content */}
+        <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+          <div className="text-white max-w-lg">
+            {/* Main heading */}
+            <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+              How to Register for a Ka'Starta loan on Airtel Money.
+            </h1>
+            
+            {/* Availability text */}
+            <p className="text-lg lg:text-xl mb-8 opacity-90">
+              Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+            </p>
+            
+            {/* Steps instruction */}
+            <div className="bg-red-500 text-white px-6 py-3 rounded-lg inline-flex items-center gap-3">
+              <span className="text-lg font-semibold">Please Follow These Steps:</span>
+              <div className="flex gap-1">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+        
+        {/* Right Side - Phone Steps */}
+        <div className="w-1/2 flex items-center justify-center relative py-12">
+          <div className="flex gap-4 items-end">
+            
+            {/* Step 1 Phone with red bubble */}
+            <div className="relative flex-shrink-0">
+              {/* Red speech bubble positioned above phone */}
+              <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <img 
+  src="red_dial.png" 
+  alt="Dial *115#" 
+  className="max-w-120 h-auto"
+/>
+              </div>
+              
+              {/* Phone container */}
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96">
+                
+                <div className="space-y-3 ">
+                  <p className="text-sm mb-2 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                  <div className="text-sm font-bold">1. Accept</div>
+                  <div className="text-sm">Exit</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Step 2 Phone */}
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96 flex-shrink-0">
+              <p className="text-sm mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+              <p className="text-sm">For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
+            </div>
+            
+            {/* Step 3 Phone */}
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96 flex-shrink-0">
+              <p className="text-sm mb-3">Thank you for opting-in and for accepting the terms and conditions.</p>
+              <p className="text-sm mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
+              <p className="text-sm mb-4">T and C's: kastarta.com/</p>
+              
+              <div className="text-xs text-gray-600 border-t pt-3">
+                <p className="mb-2">Enter your PIN to opt-in and accept the Terms and Conditions to access the Cash Loans service. For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
+                <p>Thank you for opting-in and for accepting the terms and conditions. Please redial *115# to apply for a loan. T and C's: kastarta.com/</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
       {/* Our Team Section */}
       <section id="our-team" className="py-20 bg-gray-50">
