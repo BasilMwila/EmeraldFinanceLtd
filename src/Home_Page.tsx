@@ -522,7 +522,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         </div>
         
         {/* Right Side - Phone Steps */}
-        <div className="w-1/2 flex items-center justify-center relative py-12">
+        <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
           <div className="flex gap-4 items-end">
             
             {/* Step 1 Phone with red bubble */}
@@ -537,10 +537,10 @@ const EmeraldFinanceHomepage: React.FC = () => {
               </div>
               
               {/* Phone container */}
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120">
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150">
                 
                 <div className="space-y-3 ">
-                  <p className="text-2xl mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                  <p className="text-2xl mb-0 mt-30">Terms and Conditions apply for Ka'Starta Loans.</p>
                   <div className="text-lg font-bold">1. Accept</div>
                   <div className="text-lg">2. Exit</div>
                 </div>
@@ -548,20 +548,20 @@ const EmeraldFinanceHomepage: React.FC = () => {
             </div>
             
             {/* Step 2 Phone */}
-            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120 flex-shrink-0">
-              <p className="text-lg mt-24 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+              <p className="text-lg mt-30 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
               <p className="text-lg">For Terms and Conditions visit https://kastarta.com/</p>
             </div>
             
             {/* Step 3 Phone */}
-            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120 flex-shrink-0">
-              <p className="text-sm mb-3">Thank you for opting-in and for accepting the terms and conditions.</p>
-              <p className="text-sm mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
-              <p className="text-sm mb-4">T and C's: kastarta.com/</p>
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+              <p className="text-lg mb-3 mt-30">Thank you for opting-in and for accepting the terms and conditions.</p>
+              <p className="text-lg mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
+              <p className="text-lg mb-4">T and C's: kastarta.com/</p>
               
-              <div className="text-xs text-gray-600 border-t pt-3">
-                <p className="mb-2">Enter your PIN to opt-in and accept the Terms and Conditions to access the Cash Loans service. For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
-                <p>Thank you for opting-in and for accepting the terms and conditions. Please redial *115# to apply for a loan. T and C's: kastarta.com/</p>
+              <div className="text-xs text-gray-600 border-t pt-3 mt-24">
+                <p className="mb-2"><span className='font-bold'>Enter your PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service. For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
+                <p>Thank you for opting-in and for accepting the terms and conditions. Please redial *115# to apply for a loan. T and C's: <span className='font-bold'>https://www.kastarta.com/</span></p>
               </div>
             </div>
             
