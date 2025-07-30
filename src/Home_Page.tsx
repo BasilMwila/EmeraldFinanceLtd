@@ -537,24 +537,24 @@ const EmeraldFinanceHomepage: React.FC = () => {
               </div>
               
               {/* Phone container */}
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96">
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120">
                 
                 <div className="space-y-3 ">
-                  <p className="text-sm mb-2 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
-                  <div className="text-sm font-bold">1. Accept</div>
-                  <div className="text-sm">Exit</div>
+                  <p className="text-2xl mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                  <div className="text-lg font-bold">1. Accept</div>
+                  <div className="text-lg">2. Exit</div>
                 </div>
               </div>
             </div>
             
             {/* Step 2 Phone */}
-            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96 flex-shrink-0">
-              <p className="text-sm mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
-              <p className="text-sm">For Terms and Conditions visit https://emeraldfinanceltd.com/</p>
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120 flex-shrink-0">
+              <p className="text-lg mt-24 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+              <p className="text-lg">For Terms and Conditions visit https://kastarta.com/</p>
             </div>
             
             {/* Step 3 Phone */}
-            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-52 h-96 flex-shrink-0">
+            <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-64 h-120 flex-shrink-0">
               <p className="text-sm mb-3">Thank you for opting-in and for accepting the terms and conditions.</p>
               <p className="text-sm mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
               <p className="text-sm mb-4">T and C's: kastarta.com/</p>
