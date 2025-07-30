@@ -4,33 +4,14 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 const EmeraldFinanceHomepage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     // Add smooth scrolling to the entire document
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Intersection Observer for section animations
-    const observerOptions = {
-      threshold: 0.3,
-      rootMargin: '-50px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisibleSections(prev => new Set(prev).add(entry.target.id));
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    const sections = document.querySelectorAll('.snap-section');
-    sections.forEach(section => observer.observe(section));
-    
     // Handle scroll events to update active section
     const handleScroll = () => {
-      const sections = ['home', 'about-us', 'objective', 'partnership', 'services', 'lending', 'mobile-money', 'how-to', 'get-loan', 'repay-loan', 'our-team', 'contact-us'];
+      const sections = ['home', 'about-us', 'objective', 'partnership', 'services', 'how-to', 'our-team', 'contact-us'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       for (const section of sections) {
@@ -50,13 +31,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Call once to set initial state
     
-    // Make home section visible immediately
-    setVisibleSections(new Set(['home']));
-    
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
       window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
     };
   }, []);
 
@@ -84,70 +61,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
           scroll-snap-align: start;
           scroll-snap-stop: always;
           position: relative;
-          opacity: 0;
-          transform: translateY(50px);
-          transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        .snap-section.section-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        /* Entrance animations for different sections */
-        .slide-up-enter {
-          transform: translateY(100vh);
-          opacity: 0;
-        }
-        
-        .slide-up-enter.section-visible {
-          transform: translateY(0);
-          opacity: 1;
-          transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .slide-down-enter {
-          transform: translateY(-100vh);
-          opacity: 0;
-        }
-        
-        .slide-down-enter.section-visible {
-          transform: translateY(0);
-          opacity: 1;
-          transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .fade-scale-enter {
-          transform: scale(0.8);
-          opacity: 0;
-        }
-        
-        .fade-scale-enter.section-visible {
-          transform: scale(1);
-          opacity: 1;
-          transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .slide-left-enter {
-          transform: translateX(-100vw);
-          opacity: 0;
-        }
-        
-        .slide-left-enter.section-visible {
-          transform: translateX(0);
-          opacity: 1;
-          transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .slide-right-enter {
-          transform: translateX(100vw);
-          opacity: 0;
-        }
-        
-        .slide-right-enter.section-visible {
-          transform: translateX(0);
-          opacity: 1;
-          transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
         }
         
         /* Page transition effects */
@@ -211,6 +125,10 @@ const EmeraldFinanceHomepage: React.FC = () => {
           }
         }
 
+        /* Slide transitions */
+        .slide-transition {
+          transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
         
         /* Enhanced scrollbar */
         .snap-container::-webkit-scrollbar {
@@ -228,6 +146,22 @@ const EmeraldFinanceHomepage: React.FC = () => {
         
         .snap-container::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #059669, #047857);
+        }
+        
+        /* Section borders for clear separation */
+        .section-separator {
+          position: relative;
+        }
+        
+        .section-separator::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(to right, transparent, #10b981, transparent);
+          opacity: 0.5;
         }
         
         /* Page indicator dots */
@@ -263,7 +197,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* Page Navigation Indicators */}
       <div className="page-indicator">
-        {['home', 'about-us', 'objective', 'partnership', 'services', 'lending', 'mobile-money', 'how-to', 'our-team', 'contact-us'].map((section, index) => (
+        {['home', 'about-us', 'objective', 'partnership', 'services', 'how-to', 'our-team', 'contact-us'].map((section, index) => (
           <div
             key={section}
             className={`page-dot ${activeSection === section ? 'active' : ''}`}
@@ -274,7 +208,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </div>
 
       {/* Header - Fixed position for easy navigation */}
-      <header className="bg-emerald-800 shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <header className="bg-emerald-800 shadow-lg fixed top-0 left-0 right-0 z-50 slide-transition">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -333,7 +267,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className={`snap-section fade-scale-enter relative pt-20 ${visibleSections.has('home') ? 'section-visible' : ''}`}>
+      <section id="home" className="snap-section section-separator relative pt-20 section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -385,7 +319,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section id="about-us" className={`snap-section slide-left-enter relative ${visibleSections.has('about-us') ? 'section-visible' : ''}`}>
+      <section id="about-us" className="snap-section section-separator relative section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -452,7 +386,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* Objective Section */}
-      <section className={`snap-section slide-up-enter relative ${visibleSections.has('objective') ? 'section-visible' : ''}`} id="objective">
+      <section className="snap-section section-separator relative section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -508,7 +442,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* Strategic Partnership Section */}
-      <section id="partnership" className={`snap-section slide-right-enter relative ${visibleSections.has('partnership') ? 'section-visible' : ''}`}>
+      <section id="partnership" className="snap-section section-separator relative section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -575,7 +509,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* What We Do Section */}
       <section 
         id="services"
-        className={`snap-section fade-scale-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('services') ? 'section-visible' : ''}`}
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.6), rgba(0, 0, 0, 0)), url('/what_we_do.jpg')` }}
       >
         <div className="absolute inset-0 bg-opacity-40"></div>
@@ -614,8 +548,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* Individual & Agent Lending + Merchant Financing Section */}
       <section 
-        className={`snap-section slide-down-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('lending') ? 'section-visible' : ''}`}
-        id="lending"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/about_page.jpg')` }}
       >
         <div className="absolute inset-0 bg-opacity-50"></div>
@@ -678,8 +611,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* Mobile Money Integration Section */}
       <section 
-        className={`snap-section slide-left-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('mobile-money') ? 'section-visible' : ''}`}
-        id="mobile-money"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/friends.jpg')` }}
       >
         <div className="absolute inset-0 bg-opacity-40"></div>
@@ -725,7 +657,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* How To Section - Registration */}
       <section 
         id="how-to"
-        className={`snap-section slide-up-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('how-to') ? 'section-visible' : ''}`}
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: "url('steps.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -794,8 +726,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* How To Section - Get Loan */}
       <section 
-        className={`snap-section slide-right-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('get-loan') ? 'section-visible' : ''}`}
-        id="get-loan"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: "url('steps1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -875,8 +806,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* How To Section - Repay Loan */}
       <section 
-        className={`snap-section fade-scale-enter relative bg-cover bg-center bg-no-repeat ${visibleSections.has('repay-loan') ? 'section-visible' : ''}`}
-        id="repay-loan"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
         style={{ backgroundImage: "url('repay.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -953,7 +883,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* Our Team Section */}
-      <section id="our-team" className={`snap-section slide-down-enter bg-gray-50 flex items-center ${visibleSections.has('our-team') ? 'section-visible' : ''}`}>
+      <section id="our-team" className="snap-section section-separator bg-gray-50 section-fade flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="fade-in">
             <h2 className="text-5xl font-bold text-emerald-800 mb-4">Meet Our Team</h2>
@@ -1027,7 +957,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact-us" className={`snap-section slide-left-enter relative ${visibleSections.has('contact-us') ? 'section-visible' : ''}`}>
+      <section id="contact-us" className="snap-section section-separator relative section-fade">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -1055,7 +985,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         </div>
       </section>
 
-      <footer className="bg-emerald-800 py-8 transition-all duration-300">
+      <footer className="bg-emerald-800 py-8 slide-transition">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white text-lg">ka' starta ka bonse. Finance for all.</p>
         </div>
