@@ -571,6 +571,205 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </div>
     </section>
 
+    <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('steps1.jpg')" }}
+    >
+      {/* Red gradient overlay from left to right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+      
+      {/* Main content - Flex layout for left-right split */}
+      <div className="relative z-10 min-h-screen flex">
+        
+        {/* Left Side - Text Content */}
+        <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+          <div className="text-white max-w-lg">
+            {/* Main heading */}
+            <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+             How to get a loan on airtel money.
+            </h1>
+            
+            {/* Availability text */}
+            <p className="text-lg lg:text-xl mb-8 opacity-90">
+              Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+            </p>
+            
+            {/* Steps instruction */}
+               <div className="inline-block">
+              <img 
+                src="steps.png" 
+                alt="Please Follow These Steps" 
+                className="h-auto max-w-md"
+              />
+            </div>
+          </div>
+        </div>
+        
+        {/* Right Side - Phone Steps */}
+        <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+          <div className="flex gap-4 items-end">
+            
+            {/* Step 1 Phone with red bubble */}
+            <div className="relative flex-shrink-0">
+              {/* Red speech bubble positioned above phone */}
+              <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <img 
+  src="red_dial.png" 
+  alt="Dial *115#" 
+  className="max-w-120 h-auto"
+/>
+              </div>
+              
+              {/* Phone container */}
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150">
+                
+                <div className="space-y-3 ">
+                    
+                      <p className="text-lg mt-24">Welcome to Ka'Starta loan service</p>
+                      
+                      <div className="space-y-3 mt-8">
+                        <div className="text-lg">
+                          <span className="font-bold">1. Ka'Starta Loan</span>
+                        </div>
+                        <div className="text-lg">2. Repay Loan</div>
+                        <div className="text-lg">3. Balance</div>
+                        <div className="text-lg">4. About</div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            {/* Step 2 Phone */}
+             <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+               <p className="text-lg leading-relaxed mt-24">
+                        Enter your <span className="font-bold">MM PIN</span><br />
+                        number to confirm
+                      </p>
+            </div>
+
+            
+            {/* Step 3 Phone */}
+             <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+              <p className="text-lg font-semibold mt-24">Enter your loan loan amount from K50 to K750:</p>
+                      
+                      <div className="space-y-3">
+                        <div className="text-base">
+                          <span className="font-bold">1. 500</span><br />
+                          
+                        </div>
+                     
+          
+                        <div className="text-base">
+                          <span className="font-bold"> Submit</span>
+                        </div></div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+     <section 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('repay.jpg')" }}
+    >
+      {/* Red gradient overlay from left to right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+      
+      {/* Main content - Flex layout for left-right split */}
+      <div className="relative z-10 min-h-screen flex">
+        
+        {/* Left Side - Text Content */}
+        <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+          <div className="text-white max-w-lg">
+            {/* Main heading */}
+            <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+             How to repay a loan on airtel money.
+            </h1>
+            
+            {/* Availability text */}
+            <p className="text-lg lg:text-xl mb-8 opacity-90">
+              Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+            </p>
+            
+            {/* Steps instruction */}
+               <div className="inline-block">
+              <img 
+                src="steps.png" 
+                alt="Please Follow These Steps" 
+                className="h-auto max-w-md"
+              />
+            </div>
+          </div>
+        </div>
+        
+        {/* Right Side - Phone Steps */}
+        <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+          <div className="flex gap-4 items-end">
+            
+            {/* Step 1 Phone with red bubble */}
+            <div className="relative flex-shrink-0">
+              {/* Red speech bubble positioned above phone */}
+              <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <img 
+  src="red_dial.png" 
+  alt="Dial *115#" 
+  className="max-w-120 h-auto"
+/>
+              </div>
+              
+              {/* Phone container */}
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150">
+                
+                <div className="space-y-3 ">
+                    
+                      <p className="text-lg mt-24">Welcome to Ka'Starta loan service</p>
+                      
+                      <div className="space-y-3 mt-8">
+                        <div className="text-lg">
+                        1. Ka'Starta Loan
+                        </div>
+                        <div className="text-lg font-bold">2. Repay Loan</div>
+                        <div className="text-lg">3. Balance</div>
+                        <div className="text-lg">4. About</div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            {/* Step 2 Phone */}
+             <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+               <p className="text-lg leading-relaxed mt-24">
+                        Enter your <span className="font-bold">MM PIN</span><br />
+                        number to confirm
+                      </p>
+            </div>
+
+            
+            {/* Step 3 Phone */}
+             <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0">
+              <p className="text-lg font-semibold mt-24">Choose your repayment:</p>
+                      
+                      <div className="space-y-3">
+                        <div className="text-base">
+                          <span className="">1. Make partial repayment</span><br />
+                        </div>
+                        <div className="text-base">
+                          <span className="">2. Make full repayment of k500</span>
+                        </div></div>
+            </div>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
     
 
       {/* Our Team Section */}
