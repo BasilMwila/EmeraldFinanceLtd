@@ -511,12 +511,12 @@ const EmeraldFinanceHomepage: React.FC = () => {
             </p>
             
             {/* Steps instruction */}
-            <div className="bg-red-500 text-white px-6 py-3 rounded-lg inline-flex items-center gap-3">
-              <span className="text-lg font-semibold">Please Follow These Steps:</span>
-              <div className="flex gap-1">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
+               <div className="inline-block">
+              <img 
+                src="steps.png" 
+                alt="Please Follow These Steps" 
+                className="h-auto max-w-md"
+              />
             </div>
           </div>
         </div>
@@ -570,6 +570,8 @@ const EmeraldFinanceHomepage: React.FC = () => {
         
       </div>
     </section>
+
+    
 
       {/* Our Team Section */}
       <section id="our-team" className="py-20 bg-gray-50">
