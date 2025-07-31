@@ -1,180 +1,71 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, MapPin, Globe, Building2, Phone, Smartphone, Users, Store, CreditCard } from 'lucide-react';
-
-interface SlideData {
-  title: string;
-  content: string[];
-  provider: 'airtel' | 'mtn';
-  type: 'apply' | 'repay';
-}
-
-const PhoneSlideshow: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const slides: SlideData[] = [
-    {
-      title: "Apply via Airtel",
-      provider: 'airtel',
-      type: 'apply',
-      content: [
-        "Dial *115#",
-        "Select option 5, 'Na Sova Loan'",
-        "Select option 5, 'Ka'starta Loan'",
-        "Select option 1, 'Request Loan'"
-      ]
-    },
-    {
-      title: "Apply via MTN",
-      provider: 'mtn',
-      type: 'apply',
-      content: [
-        "Dial *115#",
-        "Select 'Kongola & Savings' (6)",
-        "Select 'Kongola' (2)",
-        "Select 'Ka'Starta' (4)"
-      ]
-    },
-    {
-      title: "Repay via Airtel",
-      provider: 'airtel',
-      type: 'repay',
-      content: [
-        "Dial *115#",
-        "Select option 5, 'Na Sova Loan'",
-        "Select option 5, 'Ka'starta Loan'",
-        "Select option 1, 'Repay Loan'"
-      ]
-    },
-    {
-      title: "Repay via MTN",
-      provider: 'mtn',
-      type: 'repay',
-      content: [
-        "Dial *115#",
-        "Select 'Kongola & Savings'",
-        "Select 'Kongola'",
-        "Select 'Ka'Starta'"
-      ]
-    }
-  ];
-
-  useEffect(() => {
-    if (!isPlaying) return;
-    
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isPlaying, slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setIsPlaying(false);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setIsPlaying(false);
-  };
-
-  const currentSlideData = slides[currentSlide];
-
-  return (
-    <div className="relative">
-      <div className="w-[300px] h-[600px] bg-gradient-to-br from-slate-800 to-black rounded-[30px] mx-auto relative shadow-2xl overflow-hidden">
-        <div className="w-[260px] h-[520px] bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-[20px] mx-auto mt-10 relative flex flex-col items-center justify-center text-white font-bold overflow-hidden">
-          
-          {/* Navigation arrows */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all z-10"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          
-          <button 
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all z-10"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-
-          {/* Slide indicators */}
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentSlide(index);
-                  setIsPlaying(false);
-                }}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-yellow-400' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Content */}
-          <div className="text-center px-6 py-8">
-            <div className="text-yellow-400 text-2xl mb-2 drop-shadow-lg">
-              Ka'Starta
-            </div>
-            
-            <div className={`inline-block px-3 py-1 rounded-full text-xs mb-4 ${
-              currentSlideData.provider === 'airtel' 
-                ? 'bg-red-500/80 text-white' 
-                : 'bg-yellow-500/80 text-black'
-            }`}>
-              {currentSlideData.provider === 'airtel' ? 'Airtel Money' : 'MTN MoMo'}
-            </div>
-            
-            <h3 className="text-lg font-bold mb-4 text-yellow-400">
-              {currentSlideData.title}
-            </h3>
-            
-            <div className="space-y-2 text-sm">
-              {currentSlideData.content.map((step, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <span className="bg-yellow-400 text-emerald-800 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
-                    {index + 1}
-                  </span>
-                  <span className="text-left">{step}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-4 text-xs opacity-80">
-              {currentSlideData.type === 'apply' ? '📱 Quick Application' : '💰 Easy Repayment'}
-            </div>
-          </div>
-
-          {/* Play/Pause button */}
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="absolute bottom-4 right-4 bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all"
-          >
-            {isPlaying ? '⏸️' : '▶️'}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 const EmeraldFinanceHomepage: React.FC = () => {
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    // Add smooth scrolling to the entire document
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Handle scroll events to update active section
     const handleScroll = () => {
-      setIsHeaderVisible(window.scrollY < 100);
+      const scrollPosition = window.scrollY + 150; // Offset for header height
+      
+      // Define section ranges - some sections map to the same nav item
+      const sectionRanges = [
+        { id: 'home', navKey: 'home' },
+        { id: 'about-us', navKey: 'about-us' },
+        { id: 'objective', navKey: 'about-us' }, // Part of about section
+        { id: 'partnership', navKey: 'about-us' }, // Part of about section  
+        { id: 'services', navKey: 'services' },
+        { id: 'how-to', navKey: 'how-to' },
+        { id: 'our-team', navKey: 'our-team' },
+        { id: 'contact-us', navKey: 'contact-us' }
+      ];
+      
+      let currentActiveSection = 'home';
+      
+      for (let i = 0; i < sectionRanges.length; i++) {
+        const { id, navKey } = sectionRanges[i];
+        const element = document.getElementById(id);
+        
+        if (element) {
+          const offsetTop = element.offsetTop;
+          
+          if (scrollPosition >= offsetTop) {
+            currentActiveSection = navKey;
+          }
+        }
+      }
+      
+      if (activeSection !== currentActiveSection) {
+        console.log('Active section changed to:', currentActiveSection); // Debug log
+        setActiveSection(currentActiveSection);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledScroll);
+    handleScroll(); // Call once to set initial state
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, [activeSection]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -184,276 +75,1244 @@ const EmeraldFinanceHomepage: React.FC = () => {
   };
 
   return (
-    <div className="font-sans text-slate-800 overflow-x-hidden">
-      {/* Header */}
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isHeaderVisible 
-          ? 'bg-gradient-to-r from-slate-800 to-emerald-800' 
-          : 'bg-slate-800/95 backdrop-blur-lg'
-      } shadow-lg`}>
-        <nav className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
-            <img src="/Logo2.png" alt="Emerald Finance Logo" className="h-15 w-22 inline-block" />
-            <ul className="hidden md:flex gap-8">
-            {['home', 'about', 'services', 'team', 'contact'].map((item) => (
-              <li key={item}>
+    <div className="snap-container">
+      <style>{`
+        /* Scroll snap container */
+        .snap-container {
+          height: 100vh;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+          scroll-behavior: smooth;
+        }
+        
+        /* Each section snaps to viewport */
+        .snap-section {
+          height: 100vh;
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          position: relative;
+          transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        }
+        
+        /* Page transition effects */
+        .page-transition-up {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+        .page-transition-down {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+        /* Fade transitions between sections */
+        .section-fade {
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in {
+          animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .slide-in-left {
+          animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .slide-in-right {
+          animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        /* Slide transitions */
+        .slide-transition {
+          transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Enhanced scrollbar */
+        .snap-container::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        .snap-container::-webkit-scrollbar-track {
+          background: #1f2937;
+        }
+        
+        .snap-container::-webkit-scrollbar-thumb {
+          background: linear-gradient(to bottom, #10b981, #059669);
+          border-radius: 4px;
+        }
+        
+        .snap-container::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(to bottom, #059669, #047857);
+        }
+        
+        /* Section borders for clear separation */
+        .section-separator {
+          position: relative;
+        }
+        
+        .section-separator::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(to right, transparent, #10b981, transparent);
+          opacity: 0.5;
+        }
+        
+        /* Page indicator dots */
+        .page-indicator {
+          position: fixed;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 100;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        
+        .page-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.4);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        
+        .page-dot.active {
+          background: #10b981;
+          transform: scale(1.5);
+        }
+        
+        .page-dot:hover {
+          background: rgba(255, 255, 255, 0.8);
+        }
+      `}</style>
+
+      {/* Page Navigation Indicators */}
+      <div className="page-indicator">
+        {['home', 'about-us', 'services', 'how-to', 'our-team', 'contact-us'].map((section, index) => (
+          <div
+            key={section}
+            className={`page-dot ${activeSection === section ? 'active' : ''}`}
+            onClick={() => scrollToSection(section)}
+            title={section.replace('-', ' ').toUpperCase()}
+          />
+        ))}
+      </div>
+
+      {/* Header - Fixed position for easy navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 slide-transition">
+        {/* Logo Section - Green Background */}
+        <div className="bg-emerald-800 shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-end items-center py-4">
+              <div className="flex items-center">
+                <img 
+                  src="/Emerald_Logo_Web1.png" 
+                  alt="Emerald Finance Logo" 
+                  className="h-32 w-auto"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Section - White Background */}
+        <div className="bg-white shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-left items-center py-4">
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-8">
+                {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => {
+                  const sectionId = item.toLowerCase().replace(' ', '-');
+                  const isActive = activeSection === sectionId;
+                  
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(sectionId)}
+                      className={`text-gray-800 hover:text-emerald-600 transition-colors duration-300 text-sm transform hover:scale-105 ${
+                        isActive ? 'font-bold text-emerald-600' : 'font-medium'
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
                 <button
-                  onClick={() => scrollToSection(item)}
-                  className="text-white font-medium px-4 py-2 rounded-full hover:bg-yellow-400 hover:text-slate-800 transition-all duration-300 transform hover:-translate-y-1 capitalize"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-gray-800 hover:text-emerald-600 transition-colors duration-300"
                 >
-                  {item}
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                 </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+              </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden">
+                <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50 section-transition">
+                  {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => {
+                    const sectionId = item.toLowerCase().replace(' ', '-');
+                    const isActive = activeSection === sectionId;
+                    
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => {
+                          scrollToSection(sectionId);
+                          setIsMenuOpen(false);
+                        }}
+                        className={`text-gray-800 block px-3 py-2 text-base hover:text-emerald-600 transition-colors duration-300 ${
+                          isActive ? 'font-bold text-emerald-600' : 'font-medium'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </header>
 
       {/* Hero Section */}
-     {/* Hero Section */}
-      <section id="home" className="min-h-screen bg-gradient-to-br from-emerald-800 via-emerald-600 to-emerald-400 flex items-center relative overflow-hidden">
-        {/* Animated SVG bubbles background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Bubble 1 */}
-          <svg
-            className="absolute left-[10%] top-[20%] w-24 h-24 opacity-30 animate-bubble-move-1"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            <circle cx="50" cy="50" r="48" fill="#f6c932" />
-          </svg>
-          {/* Bubble 2 */}
-          <svg
-            className="absolute left-[70%] top-[10%] w-32 h-32 opacity-20 animate-bubble-move-2"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            <circle cx="50" cy="50" r="40" fill="#fff" />
-          </svg>
-          {/* Bubble 3 */}
-          <svg
-            className="absolute left-[60%] top-[60%] w-20 h-20 opacity-25 animate-bubble-move-3"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            <circle cx="50" cy="50" r="35" fill="#f6c932" />
-          </svg>
-          {/* Bubble 4 */}
-          <svg
-            className="absolute left-[25%] top-[70%] w-28 h-28 opacity-15 animate-bubble-move-4"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            <circle cx="50" cy="50" r="45" fill="#fff" />
-          </svg>
+      <section id="home" className="snap-section section-separator relative pt-32 section-fade">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/home_page.jpg')`
+          }}
+        >
+          {/* Overlay for mobile phones image effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/30"></div>
         </div>
-        
-        <div className="max-w-6xl mx-auto px-5 py-20">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="text-white space-y-6 animate-fade-in-left">
-              <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg">
-                Digital Microfinance for Zambia
-              </h1>
-              <p className="text-xl opacity-90 leading-relaxed">
-                Empowering underserved communities with fair, reliable credit through innovative digital channels. Access loans instantly via mobile money.
-              </p>
-              <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-800 px-8 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                Get Ka'Starta Loan
-              </button>
-            </div>
-            
-            <div className="animate-fade-in-right">
-              <PhoneSlideshow />
+
+        <div className="relative z-10 flex items-center h-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="relative">
+              {/* Left Content */}
+              <div className="text-white slide-in-left max-w-2xl">
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                  Digital<br />
+                  Microfinance for<br />
+                  Zambia
+                </h1>
+                <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
+                  Empowering underserved communities with fair,<br />
+                  reliable credit through innovative digital channels.<br />
+                  Access loans instantly via mobile money.
+                </p>
+                <button className="bg-yellow-400 text-black px-8 py-4 rounded text-lg font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105">
+                  READ MORE
+                </button>
+              </div>
+
+              {/* Right Content - Social Icons */}
+              <div className="absolute bottom-8 right-8 slide-in-right">
+                <div className="flex flex-col space-y-4">
+                  <a href="#" className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110">
+                    <span className="text-lg font-bold">f</span>
+                  </a>
+                  <a href="#" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110">
+                    <span className="text-lg font-bold">𝕏</span>
+                  </a>
+                  <a href="#" className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110">
+                    <span className="text-lg font-bold">📷</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-4xl font-bold text-center text-slate-800 mb-12 relative">
-            About Emerald Finance
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p>
-                Founded in <span className="text-emerald-600 font-bold">2020</span> and licensed by the Bank of Zambia, Emerald Finance Limited is a leading microfinance institution based in <span className="text-emerald-600 font-bold">Lusaka</span>. We are dedicated to serving Zambia's underserved populations by providing fair and reliable credit through innovative digital channels.
-              </p>
-              
-              <p>
-                Our headquarters is strategically located at the intersection of Kwacha Rd and Parliament Rd | Olympia in Lusaka, positioning us at the heart of Zambia's economic center.
-              </p>
-              
-              <p>
-                We specialize in digital micro-lending under our flagship brand <span className="text-emerald-600 font-bold">Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { number: "2020", label: "Founded" },
-                { number: "*115#", label: "USSD Access" },
-                { number: "24/7", label: "Mobile Access" },
-                { number: "100%", label: "Digital Process" }
-              ].map((stat, index) => (
-                <div key={index} className="bg-white p-6 rounded-2xl text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">{stat.number}</div>
-                  <div className="text-slate-600 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-4xl font-bold text-center text-slate-800 mb-12 relative">
-            Our Services
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Smartphone className="w-8 h-8" />,
-                title: "Ka'Starta Mobile Loans",
-                description: "Access instant micro-loans through our mobile app and USSD code *115#. Quick approval, flexible repayment terms, and seamless integration with mobile money platforms."
-              },
-              {
-                icon: <Users className="w-8 h-8" />,
-                title: "Individual & Agent Lending",
-                description: "Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia's entrepreneurs and provide customized financial solutions."
-              },
-              {
-                icon: <Store className="w-8 h-8" />,
-                title: "Merchant Financing",
-                description: "Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market."
-              },
-              {
-                icon: <CreditCard className="w-8 h-8" />,
-                title: "Mobile Money Integration",
-                description: "Seamless integration with popular mobile money platforms. Request loans, receive funds, and make repayments all through your mobile phone."
-              }
-            ].map((service, index) => (
-              <div key={index} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-2 border-transparent hover:border-yellow-400">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-full flex items-center justify-center text-white mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+      <section id="about-us" className="snap-section section-separator relative section-fade">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.4), rgba(0, 0, 0, 0)), url('/about_page.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+            {/* Left Content */}
+            <div className="fade-in">
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+                About Emerald<br />Finance
+              </h2>
+              <div className="space-y-6 text-lg text-white leading-relaxed">
+                <p>
+                  Founded in <span className="font-semibold text-white">2020</span> and licensed by the Bank of Zambia, Emerald Finance Limited is a leading microfinance institution based in <span className="font-semibold text-white">Lusaka</span>. We are dedicated to serving Zambia's underserved populations by providing fair and reliable credit through innovative digital channels.
+                </p>
+                <p>
+                  We specialize in digital micro-lending under our flagship <span className="font-semibold text-yellow-300">brand Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
+                </p>
               </div>
-            ))}
+              <button className="mt-8 bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105">
+                READ MORE
+              </button>
+            </div>
+
+            {/* Right Content - Stats Cards */}
+            <div className="grid grid-cols-2 gap-6 slide-in-right">
+              <div className="border-2 border-white p-4 rounded-tl-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="bg-yellow-400 p-6 rounded-lg text-center">
+                  <div className="text-3xl font-bold text-white mb-2">2020</div>
+                  <div className="text-white font-semibold">Founded</div>
+                  <div className="mt-4">
+                    <ChevronRight className="w-6 h-6 text-white mx-auto" />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border-6 border-white p-4 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-emerald-600 p-6 rounded-lg text-center">
+                  <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-white font-semibold">Mobile<br />Access</div>
+                </div>
+              </div>
+              
+              <div className="border-6 border-white p-4 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-emerald-600 p-6 rounded-lg text-center">
+                  <div className="text-3xl font-bold text-white mb-2">*115#</div>
+                  <div className="text-white font-semibold">USSD<br />Access</div>
+                </div>
+              </div>
+              
+              <div className="border-2 border-white p-4 rounded-br-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="bg-yellow-400 p-6 rounded-lg text-center">
+                  <div className="text-3xl font-bold text-white mb-2">100%</div>
+                  <div className="text-white font-semibold">Digital<br />Process</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Partnership Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-800 to-emerald-800 text-white">
-        <div className="max-w-6xl mx-auto px-5">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-6">Strategic Partnership</h2>
-            <p className="text-xl mb-12 opacity-90">
+      {/* Objective Section */}
+      <section id="objective" className="snap-section section-separator relative section-fade">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(182, 200, 255, 0.75), rgba(0, 0, 0, 0.3)), url('/objective_page.jpg')`
+          }}
+        ></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-start w-full">
+            {/* Left Content */}
+            <div className="lg:col-span-2 fade-in">
+              <h2 className="text-5xl font-bold text-yellow-400 mb-8">Objective</h2>
+              <div className="text-white space-y-6 text-lg leading-relaxed">
+                <p>
+                  Emerald finance will exist to empower people economically. We will be giving access to small loans for consumption, conveniently and affordable to a new generation of credit application based on forward looking data and predictive models rather than their past performance.
+                </p>
+                <p>
+                  To achieve this, we have partnered with <span className="text-yellow-400 font-semibold">MTN Zambia and Airtel Zambia</span> to give loans to the registered MTN and Airtel Money Mobile Money Subscribers, including consumers and the agents. The loans are under the Ka'Starta Brand.
+                </p>
+              </div>
+              
+              <div className="mt-12">
+                <button className="bg-yellow-400 text-black px-6 py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105">
+                  BACK
+                </button>
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-5xl font-bold text-yellow-400 mb-4">THE<span className="text-white">UNBANKED</span></h3>
+                <p className="text-white text-lg">ka' starta ka bonse. Finance for all.</p>
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="space-y-8 slide-in-right">
+              <div className="bg-slate-400 p-6 transform hover:scale-105 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-yellow-300 mb-4">Our Vision</h3>
+                <p className="text-white">
+                  Is to provide financial solutions to the unbanked and SME's.
+                </p>
+              </div>
+
+              <div className="bg-emerald-600 p-6 rounded-lg transform hover:scale-105 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                <p className="text-white">
+                  Is simple; to include the unbanked to a world of possibility with innovative Finance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Partnership Section */}
+      <section id="partnership" className="snap-section section-separator relative section-fade">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/strategic_page.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="w-full fade-in">
+            <h2 className="text-5xl font-bold text-emerald-800 mb-6">
+              Strategic<br />Partnership
+            </h2>
+            <p className="text-xl text-gray-700 mb-12 max-w-2xl">
               We've partnered with leading mobile money providers to expand credit access throughout Zambia.
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              {['Emerald Finance', 'MTN MoMo', 'Airtel Money', 'Ezra World'].map((partner, index) => (
-                <React.Fragment key={partner}>
-                  <div className="bg-white text-slate-800 px-6 py-4 rounded-2xl font-bold shadow-lg">
-                    {partner}
-                  </div>
-                  {index < 3 && <div className="text-yellow-400 text-3xl">+</div>}
-                </React.Fragment>
-              ))}
+
+            {/* Partner Logos */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center mb-8">
+              <div className="bg-black w-48 h-32 flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/EMERALD_LOGO.jpg" 
+                  alt="Emerald Finance Logo" 
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
+
+              <div className="bg-yellow-400 w-48 h-32 flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/MTN_Logo.jpg" 
+                  alt="MTN Logo" 
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
+
+              <div className="bg-red-550 w-48 h-32 flex transform hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/Airtel_Logo.jpg" 
+                  alt="Airtel Logo" 
+                  className="h-32 w-40"
+                />
+              </div>
+
+              <div className="bg-slate-550 w-48 h-32 flex transform hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/Ezra_Logo.jpg" 
+                  alt="Ezra Logo" 
+                  className="h-32 w-40"
+                />
+              </div>
+            </div>
+
+            {/* Partner Labels */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+              <div className="text-gray-700 font-medium text-center">Emerald Finance</div>
+              <div className="text-gray-700 font-medium text-center">MTN MoMo</div>
+              <div className="text-gray-700 font-medium text-center">Airtel Money</div>
+              <div className="text-gray-700 font-medium text-center">Ezra World</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-4xl font-bold text-center text-slate-800 mb-12 relative">
-            Leadership Team
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full"></div>
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { name: "Kabeke Mulenga", role: "Chief Executive Officer", initials: "KM" },
-              { name: "Joseph Mubambe", role: "Chief Finance Officer", initials: "JM" },
-              { name: "Chibuye Susa", role: "Senior Product Development Manager", initials: "CS" },
-              { name: "Basil Mwila", role: "Data And Systems Manager | Head of I.T", initials: "BM" }
-            ].map((member, index) => (
-              <div key={index} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-6">
-                  {member.initials}
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">{member.name}</h3>
-                <p className="text-emerald-600 font-medium">{member.role}</p>
-              </div>
-            ))}
+      {/* What We Do Section */}
+      <section 
+        id="services"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.6), rgba(0, 0, 0, 0)), url('/what_we_do.jpg')` }}
+      >
+        <div className="absolute inset-0 bg-opacity-40"></div>
+        
+        <div className="relative z-10 flex items-center h-full px-8 lg:px-16">
+          <div className="max-w-2xl text-white slide-in-left">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4">
+              What We Do
+            </h1>
+            <p className="text-lg mb-4 opacity-90">company services</p>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-8">
+              Ka'Starta<br />
+              Mobile Loans
+            </h2>
+            
+            <p className="text-lg lg:text-xl leading-relaxed mb-8">
+              Access instant micro-loans through our mobile app and USSD{' '}
+              <span className="text-yellow-400 font-semibold">code *115#</span>. Quick 
+              approval, flexible repayment terms, and seamless integration with mobile money 
+              platforms.
+            </p>
+            
+            <div className="w-32 h-1 bg-red-500"></div>
           </div>
+        </div>
+        
+        <div className="absolute top-8 right-8 z-20 slide-in-right">
+          <img 
+            src="Eligible.png" 
+            alt="Who is eligible" 
+            className="w-64 h-auto shadow-lg transform hover:scale-105 transition-all duration-300"
+          />
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-emerald-800 to-slate-800 text-white">
-        <div className="max-w-6xl mx-auto px-5">
-          <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
-          
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h3 className="text-yellow-400 text-2xl font-bold mb-6">Contact Information</h3>
+      {/* Individual & Agent Lending + Merchant Financing Section */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/about_page.jpg')` }}
+      >
+        <div className="absolute inset-0 bg-opacity-50"></div>
+        
+        <div className="relative z-10 flex items-center h-full px-8 lg:px-16">
+          <div className="w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               
-              {[
-                {
-                  icon: <MapPin className="w-6 h-6" />,
-                  title: "Address:",
-                  content: "Plot No. 5038 Kwacha Rd and Parliament Rd | Olympia,\nLusaka, Zambia"
-                },
-                {
-                  icon: <Building2 className="w-6 h-6" />,
-                  title: "Licensed by:",
-                  content: "Bank of Zambia"
-                },
-                {
-                  icon: <Globe className="w-6 h-6" />,
-                  title: "Website:",
-                  content: "emeraldfinanceltd.com And\nkastarta.com"
-                }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-slate-800">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <strong>{item.title}</strong><br />
-                    <span className="whitespace-pre-line">{item.content}</span>
+              {/* Individual & Agent Lending */}
+              <div className="text-white fade-in">
+                <div className="mb-8">
+                  <div className="w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src="user_avatar.png" 
+                      alt="Individual and Agent Lending" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-              ))}
+                
+                <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 leading-tight">
+                  Individual & Agent<br />
+                  Lending
+                </h2>
+                
+                <p className="text-lg lg:text-xl leading-relaxed text-gray-200">
+                  Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia's entrepreneurs and provide customized financial solutions.
+                </p>
+              </div>
+              
+              {/* Merchant Financing */}
+              <div className="text-white fade-in">
+                <div className="mb-8">
+                  <div className="w-40 h-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src="merchat.png" 
+                      alt="Merchant Financing" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                
+                <h2 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 leading-tight">
+                  Merchant<br />
+                  Financing
+                </h2>
+                
+                <p className="text-lg lg:text-xl leading-relaxed text-gray-200">
+                  Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
+                </p>
+              </div>
             </div>
             
-            <div className="text-center">
-              <h3 className="text-yellow-400 text-2xl font-bold mb-6">Access Ka'Starta Loans</h3>
-              <p className="mb-6 text-lg">Get instant access to micro-loans using our USSD code :</p>
-              <div className="bg-yellow-400 text-slate-800 text-3xl font-bold py-6 px-8 rounded-2xl shadow-2xl mb-6">
-                Dial *115#
-              </div>
-              <p className="text-sm opacity-80">Available 24/7 through mobile money and smartphone access</p>
+            <div className="mt-16 lg:mt-20">
+              <div className="w-96 h-1 bg-yellow-600"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white text-center py-8">
-        <div className="max-w-6xl mx-auto px-5">
-          <p>&copy; 2025 Emerald Finance Limited. All rights reserved. Licensed by the Bank of Zambia.</p>
+      {/* Mobile Money Integration Section */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/friends.jpg')` }}
+      >
+        <div className="absolute inset-0 bg-opacity-40"></div>
+        
+        <div className="absolute top-15 left-48 z-20 slide-in-left">
+          <div className="w-48 h-48 rounded-tl-2xl border-white border-2 bg-opacity-100 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
+            <img 
+              src="puzzle.png" 
+              alt="Integration puzzle" 
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+        
+        <div className="relative z-10 flex items-center h-full px-8 lg:px-16">
+          <div className="max-w-2xl text-white mt-16 lg:mt-0 fade-in">
+            <h1 className="text-4xl lg:text-5xl font-bold text-yellow-400 mb-8 leading-tight">
+              Mobile Money<br />
+              Integration
+            </h1>
+            
+            <p className="text-lg lg:text-xl leading-relaxed mb-8">
+              Seamless integration with popular mobile money platforms.{' '}
+              <span className="text-yellow-400 font-semibold">
+                Request loans, receive funds, and make repayments
+              </span>{' '}
+              all through your mobile phone.
+            </p>
+            
+            <div className="w-32 h-1 bg-red-500"></div>
+          </div>
+        </div>
+        
+        <div className="absolute top-8 right-8 z-20 slide-in-right">
+          <img 
+            src="Eligible2.png" 
+            alt="Who is eligible" 
+            className="w-64 h-auto shadow-lg transform hover:scale-105 transition-all duration-300"
+          />
+        </div>
+      </section>
+
+      {/* How To Section - Registration */}
+      <section 
+        id="how-to"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade  "
+        style={{ backgroundImage: "url('steps.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Register for a Ka'Starta loan on Airtel Money.
+              </h1>
+              
+              <p className="text-lg lg:text-xl mb-8 opacity-90">
+                Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+              </p>
+              
+              <div className="inline-block">
+                <img 
+                  src="steps.png" 
+                  alt="Please Follow These Steps" 
+                  className="h-auto max-w-md transform hover:scale-105 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="red_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-3">
+                    <p className="text-xs mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                    <div className='text-xs'><span className="font-bold">1. Accept</span> <br/>2. Exit</div>
+                  
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs mt-24 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+                <p className="text-xs">For Terms and Conditions visit https://kastarta.com/</p>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs mb-3 mt-24">Thank you for opting-in and for accepting the terms and conditions.</p>
+                <p className="text-xs mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
+                <p className="text-xs mb-4">T and C's: kastarta.com/</p>
+                
+                {/* <div className="text-xs text-gray-600 border-t pt-3 mt-24">
+                  <p className="mb-2"><span className='font-bold'>Enter your PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+                  <p>Thank you for opting-in and for accepting the terms and conditions. Please redial *115# to apply for a loan. T and C's: <span className='font-bold'>https://www.kastarta.com/</span></p>
+                </div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+      {/* How To Section - Get Loan */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('steps1.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to get a loan on airtel money.
+              </h1>
+              
+              <p className="text-lg lg:text-xl mb-8 opacity-90">
+                Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+              </p>
+              
+              <div className="inline-block">
+                <img 
+                  src="steps.png" 
+                  alt="Please Follow These Steps" 
+                  className="h-auto max-w-md transform hover:scale-105 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="red_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-3">
+                    <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
+                    
+                    <div className="space-y-3 mt-8">
+                      <div className="text-xs">
+                        <span className="font-bold">1. Ka'Starta Loan</span>
+                      </div>
+                      <div className="text-xs">2. Repay Loan</div>
+                      <div className="text-xs">3. Balance</div>
+                      <div className="text-xs">4. About</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs leading-relaxed mt-24">
+                  Enter your <span className="font-bold">MM PIN</span><br />
+                  number to confirm
+                </p>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs font-semibold mt-24">Enter your loan amount from K50 to K750:</p>
+                
+                <div className="space-y-3 text-xs">
+                  <div className="text-base">
+                    <span className=" font-bold">1. 500</span><br />
+                  </div>
+                  <div className="text-base">
+                    <span className="font-bold">Submit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - Repay Loan */}
+       <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('repay.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Repay a loan on airtel money.
+              </h1>
+              
+              <p className="text-lg lg:text-xl mb-8 opacity-90">
+                Available <span className="font-bold">24/7</span> through mobile money and smartphone access.
+              </p>
+              
+              <div className="inline-block">
+                <img 
+                  src="steps.png" 
+                  alt="Please Follow These Steps" 
+                  className="h-auto max-w-md transform hover:scale-105 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="red_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-3">
+                    <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
+                    
+                    <div className="space-y-3 mt-8">
+                      <div className="text-xs">
+                        <span className="">1. Ka'Starta Loan</span>
+                      </div>
+                      <div className="text-xs font-bold">2. Repay Loan</div>
+                      <div className="text-xs">3. Balance</div>
+                      <div className="text-xs">4. About</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs leading-relaxed mt-24">
+                  Enter your <span className="font-bold">MM PIN</span><br />
+                  number to confirm
+                </p>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs font-semibold mt-24">Select your repayment method</p>
+                
+                <div className="space-y-3 text-xs">
+                  <div className="text-base">
+                    <span className=" font-bold">1. full repaymen</span><br />
+                  </div>
+                  <div className="text-base">
+                    <span className="font-bold">2. Enter amount to repay</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - MTN Registration */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('mtn_register.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Register for a Ka'Starta loan on MTN.
+              </h1>
+              
+            
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Terms and Conditions apply for KaStarta Loans.</p>
+                  <div className="space-y-1 mt-12">
+                    <div className="font-bold">1. Accept</div>
+                    <div>Exit</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - MTN Get Loan */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('get_loan_mtn.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to get a loan on MTN.
+              </h1>
+            
+              
+             
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to Ka'Starta loan service.</p>
+                  <div className="space-y-1 mt-8">
+                    <div className="font-bold">1. Ka'Starta Loan</div>
+                    <div>2. Repay Loan</div>
+                    <div>3. Balance</div>
+                    <div>4. About</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - MTN Repay Loan */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('repay_mtn.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Repay a loan on MTN.
+              </h1>
+              
+              
+              
+              
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to Ka'Starta loan service.</p>
+                  <div className="space-y-1 mt-8">
+                    <div>1. Ka'Starta Loan</div>
+                    <div className="font-bold">2. Repay Loan</div>
+                    <div>3. Balance</div>
+                    <div>4. About</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* Our Team Section */}
+     {/* Our Team Section */}
+      <section id="our-team" className="snap-section section-separator bg-gray-50 section-fade flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="fade-in">
+            <h2 className="text-5xl font-bold text-emerald-800 mb-4">Meet Our Team</h2>
+            <p className="text-xl text-gray-600 mb-16">Introducing the team</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Team Members */}
+            <div className="grid grid-cols-2 gap-8 slide-in-left">
+              {/* Row 1 */}
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Kabeke Mulenga</h3>
+                <p className="text-gray-600">Chief Executive Officer</p>
+              </div>
+
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Joseph Mubambe</h3>
+                <p className="text-gray-600">Chief Financial Officer</p>
+              </div>
+
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Chibuye Susa</h3>
+                <p className="text-gray-600">Business Development Manager</p>
+              </div>
+
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Basil Mwila</h3>
+                <p className="text-gray-600">Data and Systems Manager | Head of I.T</p>
+              </div>
+
+              {/* Row 2 */}
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Elizabeth Mubanga</h3>
+                <p className="text-gray-600">Customer care Representative</p>
+              </div>
+
+              <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-400 rounded-full"></div>
+                </div>
+                <h3 className="font-bold text-lg text-gray-800">Stephanie Chilande</h3>
+                <p className="text-gray-600">Customer care Representative</p>
+              </div>
+            </div>
+
+            {/* Company Quote - Using Eligible2.png */}
+            <div className="flex items-center justify-center slide-in-right">
+              <img 
+                src="Eligible2.png" 
+                alt="At Emerald Finance - In a world of decimals and deadlines, we're the emeralds in the rough: refined, resilient, and just a little bit brilliant." 
+                className="max-w-full h-auto transform hover:scale-105 transition-all duration-300 shadow-lg rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Us Section */}
+      <section id="contact-us" className="snap-section section-separator relative section-fade">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('office.jpg')`
+          }}
+        ></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="text-white fade-in">
+            <h2 className="text-5xl font-bold mb-8">Contact Information</h2>
+            <div className="space-y-6 text-lg">
+              <p className="text-xl leading-relaxed">
+                Our headquarters is strategically located at the intersection of Kwacha Road and Parliament Road 
+                Olympia in Lusaka, positioning us at the heart of Zambia's economic center.
+              </p>
+              
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold mb-4">Address:</h3>
+                <p className="text-xl">
+                  Plot No. 5038 Kwacha Road and Parliament Road | Olympia, Lusaka, Zambia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-emerald-800 py-8 slide-transition">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white text-lg">ka' starta ka bonse. Finance for all.</p>
         </div>
       </footer>
     </div>
