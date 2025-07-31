@@ -11,31 +11,61 @@ const EmeraldFinanceHomepage: React.FC = () => {
     
     // Handle scroll events to update active section
     const handleScroll = () => {
-      const sections = ['home', 'about-us', 'objective', 'partnership', 'services', 'how-to', 'our-team', 'contact-us'];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const scrollPosition = window.scrollY + 150; // Offset for header height
       
-      for (const section of sections) {
-        const element = document.getElementById(section);
+      // Define section ranges - some sections map to the same nav item
+      const sectionRanges = [
+        { id: 'home', navKey: 'home' },
+        { id: 'about-us', navKey: 'about-us' },
+        { id: 'objective', navKey: 'about-us' }, // Part of about section
+        { id: 'partnership', navKey: 'about-us' }, // Part of about section  
+        { id: 'services', navKey: 'services' },
+        { id: 'how-to', navKey: 'how-to' },
+        { id: 'our-team', navKey: 'our-team' },
+        { id: 'contact-us', navKey: 'contact-us' }
+      ];
+      
+      let currentActiveSection = 'home';
+      
+      for (let i = 0; i < sectionRanges.length; i++) {
+        const { id, navKey } = sectionRanges[i];
+        const element = document.getElementById(id);
+        
         if (element) {
           const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
           
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
+          if (scrollPosition >= offsetTop) {
+            currentActiveSection = navKey;
           }
         }
       }
+      
+      if (activeSection !== currentActiveSection) {
+        console.log('Active section changed to:', currentActiveSection); // Debug log
+        setActiveSection(currentActiveSection);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledScroll);
     handleScroll(); // Call once to set initial state
     
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -197,7 +227,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
       {/* Page Navigation Indicators */}
       <div className="page-indicator">
-        {['home', 'about-us', 'objective', 'partnership', 'services', 'how-to', 'our-team', 'contact-us'].map((section, index) => (
+        {['home', 'about-us', 'services', 'how-to', 'our-team', 'contact-us'].map((section, index) => (
           <div
             key={section}
             className={`page-dot ${activeSection === section ? 'active' : ''}`}
@@ -208,66 +238,90 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </div>
 
       {/* Header - Fixed position for easy navigation */}
-      <header className="bg-emerald-800 shadow-lg fixed top-0 left-0 right-0 z-50 slide-transition">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img 
-                src="/Emerald_Logo_Web1.png" 
-                alt="Emerald Finance Logo" 
-                className="h-24 w-auto"
-              />
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                  className="text-white font-medium hover:text-yellow-400 transition-colors duration-300 text-sm transform hover:scale-105"
-                >
-                  {item}
-                </button>
-              ))}
-            </nav>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-yellow-400 transition-colors duration-300"
-              >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-emerald-900 section-transition">
-                {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => {
-                      scrollToSection(item.toLowerCase().replace(' ', '-'));
-                      setIsMenuOpen(false);
-                    }}
-                    className="text-white block px-3 py-2 text-base font-medium hover:text-yellow-400 transition-colors duration-300"
-                  >
-                    {item}
-                  </button>
-                ))}
+      <header className="fixed top-0 left-0 right-0 z-50 slide-transition">
+        {/* Logo Section - Green Background */}
+        <div className="bg-emerald-800 shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-end items-center py-4">
+              <div className="flex items-center">
+                <img 
+                  src="/Emerald_Logo_Web1.png" 
+                  alt="Emerald Finance Logo" 
+                  className="h-32 w-auto"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
               </div>
             </div>
-          )}
+          </div>
+        </div>
+
+        {/* Navigation Section - White Background */}
+        <div className="bg-white shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-left items-center py-4">
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-8">
+                {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => {
+                  const sectionId = item.toLowerCase().replace(' ', '-');
+                  const isActive = activeSection === sectionId;
+                  
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(sectionId)}
+                      className={`text-gray-800 hover:text-emerald-600 transition-colors duration-300 text-sm transform hover:scale-105 ${
+                        isActive ? 'font-bold text-emerald-600' : 'font-medium'
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-gray-800 hover:text-emerald-600 transition-colors duration-300"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden">
+                <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50 section-transition">
+                  {['HOME', 'ABOUT US', 'SERVICES', 'HOW TO', 'OUR TEAM', 'CONTACT US'].map((item) => {
+                    const sectionId = item.toLowerCase().replace(' ', '-');
+                    const isActive = activeSection === sectionId;
+                    
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => {
+                          scrollToSection(sectionId);
+                          setIsMenuOpen(false);
+                        }}
+                        className={`text-gray-800 block px-3 py-2 text-base hover:text-emerald-600 transition-colors duration-300 ${
+                          isActive ? 'font-bold text-emerald-600' : 'font-medium'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="snap-section section-separator relative pt-20 section-fade">
+      <section id="home" className="snap-section section-separator relative pt-32 section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -281,9 +335,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
         <div className="relative z-10 flex items-center h-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
               {/* Left Content */}
-              <div className="text-white slide-in-left">
+              <div className="text-white slide-in-left max-w-2xl">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                   Digital<br />
                   Microfinance for<br />
@@ -300,7 +354,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               </div>
 
               {/* Right Content - Social Icons */}
-              <div className="flex justify-end slide-in-right">
+              <div className="absolute bottom-8 right-8 slide-in-right">
                 <div className="flex flex-col space-y-4">
                   <a href="#" className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110">
                     <span className="text-lg font-bold">f</span>
@@ -386,7 +440,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* Objective Section */}
-      <section className="snap-section section-separator relative section-fade">
+      <section id="objective" className="snap-section section-separator relative section-fade">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -657,7 +711,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* How To Section - Registration */}
       <section 
         id="how-to"
-        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade  "
         style={{ backgroundImage: "url('steps.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -684,46 +738,47 @@ const EmeraldFinanceHomepage: React.FC = () => {
           </div>
           
           <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
-            <div className="flex gap-4 items-end slide-in-right">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
               
               <div className="relative flex-shrink-0">
-                <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
                   <img 
                     src="red_dial.png" 
                     alt="Dial *115#" 
-                    className="max-w-120 h-auto"
+                    className="max-w-72 h-auto"
                   />
                 </div>
                 
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
                   <div className="space-y-3">
-                    <p className="text-2xl mb-0 mt-30">Terms and Conditions apply for Ka'Starta Loans.</p>
-                    <div className="text-lg font-bold">1. Accept</div>
-                    <div className="text-lg">2. Exit</div>
+                    <p className="text-xs mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                    <div className='text-xs'><span className="font-bold">1. Accept</span> <br/>2. Exit</div>
+                  
                   </div>
                 </div>
               </div>
               
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg mt-30 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
-                <p className="text-lg">For Terms and Conditions visit https://kastarta.com/</p>
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs mt-24 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+                <p className="text-xs">For Terms and Conditions visit https://kastarta.com/</p>
               </div>
               
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg mb-3 mt-30">Thank you for opting-in and for accepting the terms and conditions.</p>
-                <p className="text-lg mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
-                <p className="text-lg mb-4">T and C's: kastarta.com/</p>
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs mb-3 mt-24">Thank you for opting-in and for accepting the terms and conditions.</p>
+                <p className="text-xs mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
+                <p className="text-xs mb-4">T and C's: kastarta.com/</p>
                 
-                <div className="text-xs text-gray-600 border-t pt-3 mt-24">
+                {/* <div className="text-xs text-gray-600 border-t pt-3 mt-24">
                   <p className="mb-2"><span className='font-bold'>Enter your PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
                   <p>Thank you for opting-in and for accepting the terms and conditions. Please redial *115# to apply for a loan. T and C's: <span className='font-bold'>https://www.kastarta.com/</span></p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       </section>
 
+    
       {/* How To Section - Get Loan */}
       <section 
         className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
@@ -753,46 +808,46 @@ const EmeraldFinanceHomepage: React.FC = () => {
           </div>
           
           <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
-            <div className="flex gap-4 items-end slide-in-right">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
               
               <div className="relative flex-shrink-0">
-                <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
                   <img 
                     src="red_dial.png" 
                     alt="Dial *115#" 
-                    className="max-w-120 h-auto"
+                    className="max-w-72 h-auto"
                   />
                 </div>
                 
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
                   <div className="space-y-3">
-                    <p className="text-lg mt-24">Welcome to Ka'Starta loan service</p>
+                    <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
                     
                     <div className="space-y-3 mt-8">
-                      <div className="text-lg">
+                      <div className="text-xs">
                         <span className="font-bold">1. Ka'Starta Loan</span>
                       </div>
-                      <div className="text-lg">2. Repay Loan</div>
-                      <div className="text-lg">3. Balance</div>
-                      <div className="text-lg">4. About</div>
+                      <div className="text-xs">2. Repay Loan</div>
+                      <div className="text-xs">3. Balance</div>
+                      <div className="text-xs">4. About</div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg leading-relaxed mt-24">
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs leading-relaxed mt-24">
                   Enter your <span className="font-bold">MM PIN</span><br />
                   number to confirm
                 </p>
               </div>
 
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg font-semibold mt-24">Enter your loan amount from K50 to K750:</p>
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs font-semibold mt-24">Enter your loan amount from K50 to K750:</p>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 text-xs">
                   <div className="text-base">
-                    <span className="font-bold">1. 500</span><br />
+                    <span className=" font-bold">1. 500</span><br />
                   </div>
                   <div className="text-base">
                     <span className="font-bold">Submit</span>
@@ -805,9 +860,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
       </section>
 
       {/* How To Section - Repay Loan */}
-      <section 
+       <section 
         className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
-        style={{ backgroundImage: "url('repay.jpg')" }}
+        style={{ backgroundImage: "url('steps1.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
         
@@ -815,7 +870,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
           <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
             <div className="text-white max-w-lg slide-in-left">
               <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-                How to repay a loan on airtel money.
+                How to Repay a loan on airtel money.
               </h1>
               
               <p className="text-lg lg:text-xl mb-8 opacity-90">
@@ -833,47 +888,49 @@ const EmeraldFinanceHomepage: React.FC = () => {
           </div>
           
           <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
-            <div className="flex gap-4 items-end slide-in-right">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
               
               <div className="relative flex-shrink-0">
-                <div className="absolute -top-64 left-1/2 transform -translate-x-72 z-12">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
                   <img 
                     src="red_dial.png" 
                     alt="Dial *115#" 
-                    className="max-w-120 h-auto"
+                    className="max-w-72 h-auto"
                   />
                 </div>
                 
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
                   <div className="space-y-3">
-                    <p className="text-lg mt-24">Welcome to Ka'Starta loan service</p>
+                    <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
                     
                     <div className="space-y-3 mt-8">
-                      <div className="text-lg">1. Ka'Starta Loan</div>
-                      <div className="text-lg font-bold">2. Repay Loan</div>
-                      <div className="text-lg">3. Balance</div>
-                      <div className="text-lg">4. About</div>
+                      <div className="text-xs">
+                        <span className="">1. Ka'Starta Loan</span>
+                      </div>
+                      <div className="text-xs font-bold">2. Repay Loan</div>
+                      <div className="text-xs">3. Balance</div>
+                      <div className="text-xs">4. About</div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg leading-relaxed mt-24">
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs leading-relaxed mt-24">
                   Enter your <span className="font-bold">MM PIN</span><br />
                   number to confirm
                 </p>
               </div>
 
-              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-72 h-150 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                <p className="text-lg font-semibold mt-24">Choose your repayment:</p>
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <p className="text-xs font-semibold mt-24">Select your repayment method</p>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 text-xs">
                   <div className="text-base">
-                    <span className="">1. Make partial repayment</span><br />
+                    <span className=" font-bold">1. full repaymen</span><br />
                   </div>
                   <div className="text-base">
-                    <span className="">2. Make full repayment of k500</span>
+                    <span className="font-bold">2. Enter amount to repay</span>
                   </div>
                 </div>
               </div>
@@ -881,6 +938,8 @@ const EmeraldFinanceHomepage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      
 
       {/* Our Team Section */}
       <section id="our-team" className="snap-section section-separator bg-gray-50 section-fade flex items-center">
