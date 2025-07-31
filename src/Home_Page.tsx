@@ -939,9 +939,275 @@ const EmeraldFinanceHomepage: React.FC = () => {
         </div>
       </section>
 
+      {/* How To Section - MTN Registration */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('mtn_register.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Register for a Ka'Starta loan on MTN.
+              </h1>
+              
+            
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Terms and Conditions apply for KaStarta Loans.</p>
+                  <div className="space-y-1 mt-12">
+                    <div className="font-bold">1. Accept</div>
+                    <div>Exit</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - MTN Get Loan */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('get_loan_mtn.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to get a loan on MTN.
+              </h1>
+            
+              
+             
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to Ka'Starta loan service.</p>
+                  <div className="space-y-1 mt-8">
+                    <div className="font-bold">1. Ka'Starta Loan</div>
+                    <div>2. Repay Loan</div>
+                    <div>3. Balance</div>
+                    <div>4. About</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How To Section - MTN Repay Loan */}
+      <section 
+        className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
+        style={{ backgroundImage: "url('repay_mtn.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/60 via-yellow-900/30 to-transparent"></div>
+        
+        <div className="relative z-10 h-full flex">
+          <div className="w-1/2 flex flex-col justify-center px-8 lg:px-16 py-12">
+            <div className="text-white max-w-lg slide-in-left">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                How to Repay a loan on MTN.
+              </h1>
+              
+              
+              
+              
+            </div>
+          </div>
+          
+          <div className="w-1/2 flex items-center justify-center relative mr-16 py-12">
+            <div className="flex gap-4 items-end slide-in-right mt-32">
+              
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                  <img 
+                    src="yellow_dial.png" 
+                    alt="Dial *115#" 
+                    className="max-w-72 h-auto"
+                  />
+                </div>
+                
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div className="mt-4">1. Send money</div>
+                    <div>2. Withdraw Cash</div>
+                    <div>3. Pay Bill</div>
+                    <div>4. Airtime & Bundles</div>
+                    <div>5. MoMoPay</div>
+                    <div className="font-bold">6. Kongola & Savings</div>
+                    <div>7. Banking Services</div>
+                    <div>8. Pin Reset</div>
+                    <div>9. My Account</div>
+                    <div>00. Next</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to the Kongola& Savings service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. MoMo Advance</div>
+                    <div className="font-bold">2. Kongola</div>
+                    <div>3. Savings</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Please select Loan service.</p>
+                  <div className="space-y-1 mt-6">
+                    <div>1. Kasara Loans</div>
+                    <div>2. XtraCash Loans</div>
+                    <div>3. Xpress Loans byZenaco</div>
+                    <div className="font-bold">4. Ka'Starta</div>
+                    <div>5. Zed-Fin Loans</div>
+                    <div>0. Back</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                <div className="text-xs">
+                  <p className="mb-3 mt-6">Welcome to Ka'Starta loan service.</p>
+                  <div className="space-y-1 mt-8">
+                    <div>1. Ka'Starta Loan</div>
+                    <div className="font-bold">2. Repay Loan</div>
+                    <div>3. Balance</div>
+                    <div>4. About</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       
 
       {/* Our Team Section */}
+     {/* Our Team Section */}
       <section id="our-team" className="snap-section section-separator bg-gray-50 section-fade flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="fade-in">
@@ -1003,13 +1269,13 @@ const EmeraldFinanceHomepage: React.FC = () => {
               </div>
             </div>
 
-            {/* Company Quote */}
-            <div className="bg-emerald-600 p-12 rounded-lg text-white slide-in-right transform hover:scale-105 transition-all duration-300">
-              <div className="text-8xl mb-6 opacity-20">"</div>
-              <h3 className="text-3xl font-bold mb-6">At Emerald Finance</h3>
-              <p className="text-lg leading-relaxed">
-                In a world of decimals and deadlines, we're the emeralds in the rough: refined, resilient, and just a little bit brilliant.
-              </p>
+            {/* Company Quote - Using Eligible2.png */}
+            <div className="flex items-center justify-center slide-in-right">
+              <img 
+                src="Eligible2.png" 
+                alt="At Emerald Finance - In a world of decimals and deadlines, we're the emeralds in the rough: refined, resilient, and just a little bit brilliant." 
+                className="max-w-full h-auto transform hover:scale-105 transition-all duration-300 shadow-lg rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -1020,7 +1286,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/contact_bg.jpg')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('office.jpg')`
           }}
         ></div>
         
