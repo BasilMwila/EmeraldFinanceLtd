@@ -862,7 +862,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* How To Section - Repay Loan */}
        <section 
         className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
-        style={{ backgroundImage: "url('steps1.jpg')" }}
+        style={{ backgroundImage: "url('repay.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
         
