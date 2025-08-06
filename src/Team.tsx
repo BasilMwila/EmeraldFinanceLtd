@@ -147,14 +147,19 @@ const TeamComponent: React.FC = () => {
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Basil Mwila</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Data and Systems Manager | Head of I.T</p>
               </div>
+              
 
               {/* Row 2 */}
               <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/Elizabeth.jpg" 
+                    alt="Basil Mwila"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Elizabeth Mubanga</h3>
-                <p className="text-xs sm:text-sm text-gray-600">Customer care Representative</p>
+                <p className="text-xs sm:text-sm text-gray-600">Customer Care Representative</p>
               </div>
 
               <div className="text-center transform hover:scale-105 transition-all duration-300">
