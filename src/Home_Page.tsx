@@ -568,37 +568,37 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
             {/* Partner Logos */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-center justify-items-center mb-6 lg:mb-8">
-              <div className="bg-black w-32 sm:w-40 lg:w-48 h-20 sm:h-24 lg:h-32 flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
+              
                 <img 
                   src="/EMERALD_LOGO.jpg" 
                   alt="Emerald Finance Logo" 
-                  className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
+                  className="h-20 sm:h-16 lg:h-32 w-28 sm:w-32 lg:w-40"
                 />
-              </div>
+              
 
-              <div className="bg-yellow-400 w-32 sm:w-40 lg:w-48 h-20 sm:h-24 lg:h-32 flex items-center justify-center shadow-lg transform hover:scale-105 transition-all duration-300">
+              
                 <img 
                   src="/MTN_Logo.jpg" 
                   alt="MTN Logo" 
-                  className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
+                  className="h-20 sm:h-16 lg:h-32 w-28 sm:w-32 lg:w-40"
                 />
-              </div>
+             
 
-              <div className="bg-red-550 w-32 sm:w-40 lg:w-48 h-20 sm:h-24 lg:h-32 flex transform hover:scale-105 transition-all duration-300">
+              
                 <img 
                   src="/Airtel_Logo.jpg" 
                   alt="Airtel Logo" 
-                  className="h-20 sm:h-24 lg:h-32 w-28 sm:w-32 lg:w-40"
+                  className="h-20 sm:h-16 lg:h-32 w-28 sm:w-32 lg:w-40"
                 />
-              </div>
+             
 
-              <div className="bg-slate-550 w-32 sm:w-40 lg:w-48 h-20 sm:h-24 lg:h-32 flex transform hover:scale-105 transition-all duration-300">
+              
                 <img 
                   src="/Ezra_Logo.jpg" 
                   alt="Ezra Logo" 
-                  className="h-20 sm:h-24 lg:h-32 w-28 sm:w-32 lg:w-40"
+                  className="h-20 sm:h-16 lg:h-32 w-28 sm:w-32 lg:w-40"
                 />
-              </div>
+              
             </div>
 
             {/* Partner Labels */}
