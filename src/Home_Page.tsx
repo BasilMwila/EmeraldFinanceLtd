@@ -382,9 +382,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   reliable credit through innovative digital channels.<br className="hidden sm:block" />
                   Access loans instantly via mobile money.
                 </p>
-                <button className="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded text-base sm:text-lg font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105">
-                  READ MORE
-                </button>
+                {/* <button className="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded text-base sm:text-lg font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105">
+                  
+                </button> */}
               </div>
 
               {/* Right Content - Social Icons */}
@@ -419,7 +419,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center py-20">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
             {/* Left Content */}
-            <div className="fade-in text-center lg:text-left">
+            <div className="fade-in text-center lg:text-left mt-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 lg:mb-8">
                 About Emerald<br />Finance
               </h2>
@@ -431,9 +431,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   We specialize in digital micro-lending under our flagship <span className="font-semibold text-yellow-300">brand Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
                 </p>
               </div>
-              <button className="mt-6 lg:mt-8 bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105 text-sm sm:text-base">
-                READ MORE
-              </button>
+              {/* <button className="mt-6 lg:mt-8 bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105 text-sm sm:text-base">
+                
+              </button> */}
             </div>
 
             {/* Right Content - Stats Cards */}
@@ -487,7 +487,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start w-full">
             {/* Left Content */}
             <div className="lg:col-span-2 fade-in text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 lg:mb-8">Objective</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 lg:mb-8 mt-16">Objective</h2>
               <div className="text-white space-y-4 lg:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed">
                 <p>
                   Emerald finance will exist to empower people economically. We will be giving access to small loans for consumption, conveniently and affordable to a new generation of credit application based on forward looking data and predictive models rather than their past performance.
@@ -498,9 +498,9 @@ const EmeraldFinanceHomepage: React.FC = () => {
               </div>
               
               <div className="mt-8 lg:mt-12">
-                <button className="bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105 text-sm sm:text-base">
+                {/* <button className="bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105 text-sm sm:text-base">
                   BACK
-                </button>
+                </button> */}
               </div>
 
               <div className="mt-8 lg:mt-12">
@@ -540,7 +540,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         ></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center py-20">
-          <div className="w-full fade-in text-center lg:text-left">
+          <div className="w-full fade-in text-center lg:text-left mt-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-800 mb-4 lg:mb-6">
               Strategic<br />Partnership
             </h2>
@@ -606,7 +606,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
           <div className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-8">
             {/* Left Content */}
             <div className="max-w-2xl text-white slide-in-left text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 lg:mb-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 lg:mb-4 mt-16">
                 What We Do
               </h1>
               <p className="text-sm sm:text-base lg:text-lg mb-2 lg:mb-4 opacity-90">company services</p>
@@ -652,7 +652,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               {/* Individual & Agent Lending */}
               <div className="text-white fade-in text-center lg:text-left">
                 <div className="mb-6 lg:mb-8 flex justify-center lg:justify-start">
-                  <div className="w-24 sm:w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden transform hover:scale-105 transition-all duration-300">
+                  <div className="w-24 sm:w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden mt-16 transform hover:scale-105 transition-all duration-300">
                     <img 
                       src="user_avatar.png" 
                       alt="Individual and Agent Lending" 
@@ -712,7 +712,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             {/* Left - Puzzle Image */}
             <div className="flex-shrink-0 slide-in-left order-2 lg:order-1">
-              <div className="w-32 sm:w-40 lg:w-48 h-32 sm:h-40 lg:h-48 rounded-tl-2xl border-white border-2 bg-opacity-100 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
+              <div className="w-32  sm:w-40 lg:w-48 h-32 sm:h-40 lg:h-48 rounded-tl-2xl border-white border-2 bg-opacity-100 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
                 <img 
                   src="puzzle.png" 
                   alt="Integration puzzle" 
@@ -723,7 +723,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
             
             {/* Center Content */}
             <div className="flex-1 text-white fade-in text-center lg:text-left order-1 lg:order-2">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-400 mb-4 lg:mb-8 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-400 mb-4 lg:mb-8 leading-tight mt-16">
                 Mobile Money<br />
                 Integration
               </h1>

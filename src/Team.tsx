@@ -93,7 +93,7 @@ const TeamComponent: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="fade-in text-center lg:text-left mb-12 lg:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-800 mb-2 lg:mb-4">Meet Our Team</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600">Introducing the team</p>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mt-16">Introducing the team</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
