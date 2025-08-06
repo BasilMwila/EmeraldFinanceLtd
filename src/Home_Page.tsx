@@ -670,7 +670,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               {/* Individual & Agent Lending */}
               <div className="text-white fade-in text-center lg:text-left">
                 <div className="mb-6 lg:mb-8 flex justify-center lg:justify-start">
-                  <div className="w-24 sm:w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden mt-16 transform hover:scale-105 transition-all duration-300">
+                  <div className="w-24 sm:w-32 rounded-tl-lg bg-opacity-10 backdrop-blur-sm overflow-hidden transform hover:scale-105 transition-all duration-300 mb-4">
                     <img 
                       src="user_avatar.png" 
                       alt="Individual and Agent Lending" 
@@ -701,7 +701,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   </div>
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-400 mb-4 lg:mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-400 mb-4 lg:mb-6 leading-tight ">
                   Merchant<br />
                   Financing
                 </h2>
