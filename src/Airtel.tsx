@@ -193,11 +193,11 @@ const AirtelComponent: React.FC = () => {
                 </div>
                 
                 {/* Step 5: Confirmation */}
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                {/* <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
                   <p className="text-xs mb-2">Thank you for opting-in and for accepting the terms and conditions.</p>
                   <p className="text-xs mb-2">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
                   <p className="text-xs">T and C's: kastarta.com/</p>
-                </div>
+                </div> */}
               </div>
 
               {/* Desktop Layout - Horizontal */}
@@ -257,11 +257,11 @@ const AirtelComponent: React.FC = () => {
                 </div>
                 
                 {/* Confirmation */}
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                {/* <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
                   <p className="text-xs mb-3 mt-24">Thank you for opting-in and for accepting the terms and conditions.</p>
                   <p className="text-xs mb-3">Please <span className="font-bold text-red-400">redial *115#</span> to apply for a loan.</p>
                   <p className="text-xs mb-4">T and C's: kastarta.com/</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
