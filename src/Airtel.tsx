@@ -108,7 +108,7 @@ const AirtelComponent: React.FC = () => {
       </header>
 
       <div className="snap-container pt-20 md:pt-32">
-        {/* Registration Section */}
+        {/* Registration Section - Complete Flow */}
         <section className="snap-section relative bg-cover bg-center bg-no-repeat section-fade"
           style={{ backgroundImage: "url('steps.jpg')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -139,6 +139,7 @@ const AirtelComponent: React.FC = () => {
             <div className="w-full lg:w-1/2 flex items-center justify-center relative px-4 lg:mr-16 py-6 lg:py-12">
               {/* Mobile/Tablet Layout - Vertical Stack */}
               <div className="flex lg:hidden flex-col gap-4 items-center slide-in-right max-w-sm mx-auto">
+                {/* Dial Image for Mobile */}
                 <div className="mb-4">
                   <img 
                     src="red_dial.png" 
@@ -147,6 +148,37 @@ const AirtelComponent: React.FC = () => {
                   />
                 </div>
                 
+                {/* Step 1: Main Menu */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <p className="font-bold mb-2">Airtel Money.</p>
+                    <div>1.Send Money</div>
+                    <div>2.Get Cash</div>
+                    <div>3.SoChe,lkali,Airtime or Data</div>
+                    <div>4.Make Payment</div>
+                    <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                    <div>6.Account/PIN</div>
+                    <div>7.Savings/Insure</div>
+                    <div>8.Airtel Money Pay</div>
+                    <div>9.Learn More</div>
+                  </div>
+                </div>
+                
+                {/* Step 2: Loan Services */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div>1.Jumo FixaKash</div>
+                    <div>2.MFZ Loans</div>
+                    <div>3.KaFast Loan</div>
+                    <div>4.ZedFin Loan</div>
+                    <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                    <div>6.Fikiliza Overdraft</div>
+                    <div>7.Konza Loan</div>
+                    <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
+                  </div>
+                </div>
+                
+                {/* Step 3: Terms and Conditions */}
                 <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
                   <div className="space-y-2">
                     <p className="text-xs">Terms and Conditions apply for Ka'Starta Loans.</p>
@@ -154,11 +186,13 @@ const AirtelComponent: React.FC = () => {
                   </div>
                 </div>
                 
+                {/* Step 4: PIN Entry */}
                 <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
                   <p className="text-xs mb-2">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
                   <p className="text-xs">For Terms and Conditions visit https://kastarta.com/</p>
                 </div>
                 
+                {/* Step 5: Confirmation */}
                 <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
                   <p className="text-xs mb-2">Thank you for opting-in and for accepting the terms and conditions.</p>
                   <p className="text-xs mb-2">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
@@ -177,22 +211,55 @@ const AirtelComponent: React.FC = () => {
                     />
                   </div>
                   
-                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
-                    <div className="space-y-3">
-                      <p className="text-xs mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
-                      <div className='text-xs'><span className="font-bold">1. Accept</span> <br/>2. Exit</div>
+                  {/* Main Menu */}
+                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                    <div className="space-y-1 text-xs mt-24">
+                      <p className="font-bold mb-2">Airtel Money.</p>
+                      <div>1.Send Money</div>
+                      <div>2.Get Cash</div>
+                      <div>3.SoChe,lkali,Airtime or Data</div>
+                      <div>4.Make Payment</div>
+                      <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                      <div>6.Account/PIN</div>
+                      <div>7.Savings/Insure</div>
+                      <div>8.Airtel Money Pay</div>
+                      <div>9.Learn More</div>
                     </div>
                   </div>
                 </div>
                 
+                {/* Loan Services Menu */}
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs mt-24">
+                    <div>1.Jumo FixaKash</div>
+                    <div>2.MFZ Loans</div>
+                    <div>3.KaFast Loan</div>
+                    <div>4.ZedFin Loan</div>
+                    <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                    <div>6.Fikiliza Overdraft</div>
+                    <div>7.Konza Loan</div>
+                    <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
+                  </div>
+                </div>
+                
+                {/* Terms and Conditions */}
                 <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs mt-24 mb-3">Enter your <span className="font-bold">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
+                  <div className="space-y-3">
+                    <p className="text-xs mb-0 mt-24">Terms and Conditions apply for Ka'Starta Loans.</p>
+                    <div className='text-xs'><span className="font-bold text-red-400">1. Accept</span> <br/>2. Exit</div>
+                  </div>
+                </div>
+                
+                {/* PIN Entry */}
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs mt-24 mb-3">Enter your <span className="font-bold text-red-400">PIN to opt-in and accept the Terms and Conditions</span> to access the Cash Loans service.</p>
                   <p className="text-xs">For Terms and Conditions visit https://kastarta.com/</p>
                 </div>
                 
+                {/* Confirmation */}
                 <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
                   <p className="text-xs mb-3 mt-24">Thank you for opting-in and for accepting the terms and conditions.</p>
-                  <p className="text-xs mb-3">Please <span className="font-bold">redial *115#</span> to apply for a loan.</p>
+                  <p className="text-xs mb-3">Please <span className="font-bold text-red-400">redial *115#</span> to apply for a loan.</p>
                   <p className="text-xs mb-4">T and C's: kastarta.com/</p>
                 </div>
               </div>
@@ -200,7 +267,7 @@ const AirtelComponent: React.FC = () => {
           </div>
         </section>
 
-        {/* Get Loan Section */}
+        {/* Get Loan Section - Complete Flow */}
         <section className="snap-section relative bg-cover bg-center bg-no-repeat section-fade"
           style={{ backgroundImage: "url('steps1.jpg')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -227,7 +294,7 @@ const AirtelComponent: React.FC = () => {
             </div>
             
             <div className="w-full lg:w-1/2 flex items-center justify-center relative px-4 lg:mr-16 py-6 lg:py-12">
-              {/* Mobile Layout */}
+              {/* Mobile Layout - Scrollable with more steps */}
               <div className="flex lg:hidden flex-col gap-4 items-center slide-in-right max-w-sm mx-auto">
                 <div className="mb-4">
                   <img 
@@ -237,81 +304,126 @@ const AirtelComponent: React.FC = () => {
                   />
                 </div>
                 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                {/* Step 1: Main Menu */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <p className="font-bold mb-2">Airtel Money.</p>
+                    <div>1.Send Money</div>
+                    <div>2.Get Cash</div>
+                    <div>3.SoChe,lkali,Airtime or Data</div>
+                    <div>4.Make Payment</div>
+                    <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                    <div>6.Account/PIN</div>
+                    <div>7.Savings/Insure</div>
+                    <div>8.Airtel Money Pay</div>
+                    <div>9.Learn More</div>
+                  </div>
+                </div>
+                
+                {/* Step 2: Loan Services */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div>1.Jumo FixaKash</div>
+                    <div>2.MFZ Loans</div>
+                    <div>3.KaFast Loan</div>
+                    <div>4.ZedFin Loan</div>
+                    <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                    <div>6.Fikiliza Overdraft</div>
+                    <div>7.Konza Loan</div>
+                    <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
+                  </div>
+                </div>
+                
+                {/* Step 3: KaStarta Menu */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
                   <div className="space-y-2">
-                    <p className="text-xs">Welcome to Ka'Starta loan service</p>
+                    <p className="text-xs font-bold">Welcome to KaStarta Loans</p>
+                    <p className="text-xs">Please select</p>
                     <div className="space-y-1 text-xs">
-                      <div><span className="font-bold">1. Ka'Starta Loan</span></div>
-                      <div>2. Repay Loan</div>
-                      <div>3. Balance</div>
-                      <div>4. About</div>
+                      <div className="font-bold text-red-400">1. Get loan</div>
+                      <div>2. Mini Statement</div>
+                      <div>3. Check limit and balance</div>
+                      <div>4. About KaStarta loans</div>
+                      <div>5. T&C's</div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs leading-relaxed">
-                    Enter your <span className="font-bold">MM PIN</span><br />
-                    number to confirm
-                  </p>
-                </div>
+                {/* Step 4: Loan Status */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs mb-2">KaStarta Loans Enter your loan amount between 0ZMW and 220ZMW</p>
+                  <div className="space-y-1 text-xs">
+                    <div className="font-bold text-red-400">150</div>
 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs font-semibold mb-2">Enter your loan amount from K50 to K750:</p>
-                  <div className="space-y-2 text-xs">
-                    <div className="text-base">
-                      <span className="font-bold">1. 500</span><br />
-                    </div>
-                    <div className="text-base">
-                      <span className="font-bold">Submit</span>
-                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Desktop Layout */}
-              <div className="hidden lg:flex gap-4 items-end slide-in-right mt-32">
-                <div className="relative flex-shrink-0">
-                  <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
-                    <img 
-                      src="red_dial.png" 
-                      alt="Dial *115#" 
-                      className="max-w-72 h-auto"
-                    />
-                  </div>
-                  
-                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
-                    <div className="space-y-3 mt-16">
-                      <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
-                      
-                      <div className="space-y-3 mt-8">
-                        <div className="text-xs">
-                          <span className="font-bold">1. Ka'Starta Loan</span>
-                        </div>
-                        <div className="text-xs">2. Repay Loan</div>
-                        <div className="text-xs">3. Balance</div>
-                        <div className="text-xs">4. About</div>
+              {/* Desktop Layout - Horizontal with more steps */}
+              <div className="hidden lg:flex flex-wrap gap-4 items-end slide-in-right mt-32 max-w-6xl">
+                {/* Row 1 */}
+                <div className="flex gap-4 items-end w-full">
+                  <div className="relative flex-shrink-0">
+                    <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
+                      <img 
+                        src="red_dial.png" 
+                        alt="Dial *115#" 
+                        className="max-w-72 h-auto"
+                      />
+                    </div>
+                    
+                    {/* Main Menu */}
+                    <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                      <div className="space-y-1 text-xs mt-24">
+                        <p className="font-bold mb-2">Airtel Money.</p>
+                        <div>1.Send Money</div>
+                        <div>2.Get Cash</div>
+                        <div>3.SoChe,lkali,Airtime or Data</div>
+                        <div>4.Make Payment</div>
+                        <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                        <div>6.Account/PIN</div>
+                        <div>7.Savings/Insure</div>
+                        <div>8.Airtel Money Pay</div>
+                        <div>9.Learn More</div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs leading-relaxed mt-24">
-                    Enter your <span className="font-bold">MM PIN</span><br />
-                    number to confirm
-                  </p>
-                </div>
-
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs font-semibold mt-24">Enter your loan amount from K50 to K750:</p>
                   
-                  <div className="space-y-3 text-xs">
-                    <div className="text-base">
-                      <span className=" font-bold">1. 500</span><br />
+                  {/* Loan Services Menu */}
+                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                    <div className="space-y-1 text-xs mt-24">
+                      <div>1.Jumo FixaKash</div>
+                      <div>2.MFZ Loans</div>
+                      <div>3.KaFast Loan</div>
+                      <div>4.ZedFin Loan</div>
+                      <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                      <div>6.Fikiliza Overdraft</div>
+                      <div>7.Konza Loan</div>
+                      <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
                     </div>
-                    <div className="text-base">
-                      <span className="font-bold">Submit</span>
+                  </div>
+
+                  {/* KaStarta Menu */}
+                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                    <div className="space-y-2 mt-24">
+                      <p className="text-xs font-bold">Welcome to KaStarta Loans</p>
+                      <p className="text-xs">Please select</p>
+                      <div className="space-y-1 text-xs mt-3">
+                        <div className="font-bold text-red-400">1. Get loan</div>
+                        <div>2. Mini Statement</div>
+                        <div>3. Check limit and balance</div>
+                        <div>4. About KaStarta loans</div>
+                        <div>5. T&C's</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Loan Status */}
+                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                    <p className="text-xs mb-3 mt-24">KaStarta Loans Enter your loan amount between 0ZMW and 220ZMW</p>
+                    <div className="space-y-2 text-xs">
+                      <div className="font-bold text-red-400">220</div>
+                     
                     </div>
                   </div>
                 </div>
@@ -320,7 +432,7 @@ const AirtelComponent: React.FC = () => {
           </div>
         </section>
 
-        {/* Repay Loan Section */}
+        {/* Repay Loan Section - Complete Flow */}
         <section className="snap-section relative bg-cover bg-center bg-no-repeat section-fade"
           style={{ backgroundImage: "url('repay.jpg')" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-red-600/60 via-red-900/30 to-transparent"></div>
@@ -347,7 +459,7 @@ const AirtelComponent: React.FC = () => {
             </div>
             
             <div className="w-full lg:w-1/2 flex items-center justify-center relative px-4 lg:mr-16 py-6 lg:py-12">
-              {/* Mobile Layout */}
+              {/* Mobile Layout - Complete flow */}
               <div className="flex lg:hidden flex-col gap-4 items-center slide-in-right max-w-sm mx-auto">
                 <div className="mb-4">
                   <img 
@@ -357,39 +469,56 @@ const AirtelComponent: React.FC = () => {
                   />
                 </div>
                 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
-                  <div className="space-y-2">
-                    <p className="text-xs">Welcome to Ka'Starta loan service</p>
-                    <div className="space-y-1 text-xs">
-                      <div>1. Ka'Starta Loan</div>
-                      <div className="font-bold">2. Repay Loan</div>
-                      <div>3. Balance</div>
-                      <div>4. About</div>
-                    </div>
+                {/* Step 1: Main Menu */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <p className="font-bold mb-2">Airtel Money.</p>
+                    <div>1.Send Money</div>
+                    <div>2.Get Cash</div>
+                    <div>3.SoChe,lkali,Airtime or Data</div>
+                    <div>4.Make Payment</div>
+                    <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                    <div>6.Account/PIN</div>
+                    <div>7.Savings/Insure</div>
+                    <div>8.Airtel Money Pay</div>
+                    <div>9.Learn More</div>
                   </div>
                 </div>
                 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs leading-relaxed">
-                    Enter your <span className="font-bold">MM PIN</span><br />
-                    number to confirm
-                  </p>
+                {/* Step 2: Loan Services */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs">
+                    <div>1.Jumo FixaKash</div>
+                    <div>2.MFZ Loans</div>
+                    <div>3.KaFast Loan</div>
+                    <div>4.ZedFin Loan</div>
+                    <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                    <div>6.Fikiliza Overdraft</div>
+                    <div>7.Konza Loan</div>
+                    <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
+                  </div>
+                </div>
+                
+                {/* Step 3: Outstanding Loan */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs mb-2">KaStarta Loans You have an outstanding loan of <span className="font-bold text-red-400">ZMW 260.1</span></p>
+                  <div className="space-y-1 text-xs">
+                    <div className="font-bold text-red-400">1. Repay full amount</div>
+                    <div>2. Repay partial</div>
+                    <div>0. Back</div>
+                  </div>
                 </div>
 
-                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-black w-full max-w-xs transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs font-semibold mb-2">Select your repayment method</p>
-                  <div className="space-y-2 text-xs">
-                    <div className="text-base">
-                      <span className="font-bold">1. full repayment</span><br />
-                    </div>
-                    <div className="text-base">
-                      <span className="font-bold">2. Enter amount to repay</span>
-                    </div>
-                  </div>
+                {/* Step 4: PIN Entry */}
+                <div className="bg-white text-black rounded-2xl p-3 shadow-xl border-2 border-gray-600 w-full max-w-xs transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs leading-relaxed">
+                    Enter your <span className="font-bold text-red-400">MM PIN</span><br />
+                    to confirm repayment
+                  </p>
                 </div>
               </div>
 
-              {/* Desktop Layout */}
+              {/* Desktop Layout - Complete flow */}
               <div className="hidden lg:flex gap-4 items-end slide-in-right mt-32">
                 <div className="relative flex-shrink-0">
                   <div className="absolute -top-32 left-1/2 transform -translate-x-48 z-12">
@@ -400,40 +529,53 @@ const AirtelComponent: React.FC = () => {
                     />
                   </div>
                   
-                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
-                    <div className="space-y-3">
-                      <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
-                      
-                      <div className="space-y-3 mt-8">
-                        <div className="text-xs">
-                          <span className="">1. Ka'Starta Loan</span>
-                        </div>
-                        <div className="text-xs font-bold">2. Repay Loan</div>
-                        <div className="text-xs">3. Balance</div>
-                        <div className="text-xs">4. About</div>
-                      </div>
+                  {/* Main Menu */}
+                  <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 transform hover:scale-105 transition-all duration-300">
+                    <div className="space-y-1 text-xs mt-24">
+                      <p className="font-bold mb-2">Airtel Money.</p>
+                      <div>1.Send Money</div>
+                      <div>2.Get Cash</div>
+                      <div>3.SoChe,lkali,Airtime or Data</div>
+                      <div>4.Make Payment</div>
+                      <div className="font-bold text-red-400">5.Na Sova Loans</div>
+                      <div>6.Account/PIN</div>
+                      <div>7.Savings/Insure</div>
+                      <div>8.Airtel Money Pay</div>
+                      <div>9.Learn More</div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs leading-relaxed mt-24">
-                    Enter your <span className="font-bold">MM PIN</span><br />
-                    number to confirm
-                  </p>
+                {/* Loan Services Menu */}
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                  <div className="space-y-1 text-xs mt-24">
+                    <div>1.Jumo FixaKash</div>
+                    <div>2.MFZ Loans</div>
+                    <div>3.KaFast Loan</div>
+                    <div>4.ZedFin Loan</div>
+                    <div className="font-bold text-red-400">5.Ka'Starta Loan</div>
+                    <div>6.Fikiliza Overdraft</div>
+                    <div>7.Konza Loan</div>
+                    <p className="mt-3 text-gray-400">Press 0 for main menu or * for previous menu</p>
+                  </div>
                 </div>
 
-                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
-                  <p className="text-xs font-semibold mt-24">Select your repayment method</p>
-                  
-                  <div className="space-y-3 text-xs">
-                    <div className="text-base">
-                      <span className=" font-bold">1. full repaymen</span><br />
-                    </div>
-                    <div className="text-base">
-                      <span className="font-bold">2. Enter amount to repay</span>
-                    </div>
+                {/* Outstanding Loan */}
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs mb-3 mt-24">KaStarta Loans You have an outstanding loan of <span className="font-bold text-red-400">ZMW 260.1</span></p>
+                  <div className="space-y-2 text-xs">
+                    <div className="font-bold text-red-400">1. Repay full amount</div>
+                    <div>2. Repay partial</div>
+                    <div>0. Back</div>
                   </div>
+                </div>
+                
+                {/* PIN Entry */}
+                <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-gray-600 w-48 h-90 flex-shrink-0 transform hover:scale-105 transition-all duration-300">
+                  <p className="text-xs leading-relaxed mt-24">
+                    Enter your <span className="font-bold text-red-400">MM PIN</span><br />
+                    to confirm repayment
+                  </p>
                 </div>
               </div>
             </div>
