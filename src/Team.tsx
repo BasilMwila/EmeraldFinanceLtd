@@ -101,32 +101,48 @@ const TeamComponent: React.FC = () => {
             <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 slide-in-left">
               {/* Row 1 */}
               <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/Kabeke.jpeg" 
+                    alt="Kabeke Mulenga"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Kabeke Mulenga</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Chief Executive Officer</p>
               </div>
 
               <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/joseph.jpg" 
+                    alt="Joseph Mubambe"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Joseph Mubambe</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Chief Financial Officer</p>
               </div>
 
               <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/chibuye.jpeg" 
+                    alt="Chibuye Susa"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Chibuye Susa</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Business Development Manager</p>
               </div>
 
               <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/Basil.jpeg" 
+                    alt="Basil Mwila"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Basil Mwila</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Data and Systems Manager | Head of I.T</p>
