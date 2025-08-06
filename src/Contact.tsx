@@ -180,7 +180,7 @@ const ContactComponent: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Phone Number</h3>
-                    <p className="text-gray-600">+260 XXX XXX XXX</p>
+                    <p className="text-gray-600">+260 96 9875058</p>
                     <p className="text-sm text-gray-500">For customer support: *115#</p>
                   </div>
                 </div>
@@ -192,8 +192,8 @@ const ContactComponent: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Email Address</h3>
-                    <p className="text-gray-600">info@emeraldfinance.zm</p>
-                    <p className="text-gray-600">support@kastarta.com</p>
+                    <p className="text-gray-600">info@emeraldfinanceltd.com</p>
+                    <p className="text-gray-600">kastarta@emeraldfinanceltd.com</p>
                   </div>
                 </div>
 
@@ -206,7 +206,7 @@ const ContactComponent: React.FC = () => {
                     <h3 className="font-semibold text-gray-800 mb-1">Business Hours</h3>
                     <p className="text-gray-600">
                       Monday - Friday: 8:00 AM - 5:00 PM<br />
-                      Saturday: 9:00 AM - 1:00 PM<br />
+                      Saturday: Closed<br />
                       Sunday: Closed
                     </p>
                     <p className="text-sm text-emerald-600 font-medium mt-2">
