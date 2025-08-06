@@ -659,7 +659,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* Individual & Agent Lending + Merchant Financing Section */}
       <section 
         className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
-        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/about_page.jpg')` }}
+        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 63, 5, 0.59), rgba(0, 0, 0, 0)), url('/about_page.jpg')` }}
       >
         <div className="absolute inset-0 bg-opacity-50"></div>
         
@@ -684,7 +684,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Lending
                 </h2>
                 
-                <p className="text-sm text-black sm:text-base lg:text-lg xl:text-xl leading-relaxed text-black">
+                <p className="text-sm text-black sm:text-base lg:text-lg xl:text-xl leading-relaxed text-white">
                   Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia's entrepreneurs and provide customized financial solutions.
                 </p>
               </div>
@@ -706,7 +706,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Financing
                 </h2>
                 
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-black">
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-white">
                   Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
                 </p>
               </div>
@@ -722,7 +722,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
       {/* Mobile Money Integration Section */}
       <section 
         className="snap-section section-separator relative bg-cover bg-center bg-no-repeat section-fade"
-        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 79, 6, 0.0), rgba(0, 0, 0, 0)), url('/friends.jpg')` }}
+        style={{ backgroundImage: `linear-gradient(to right,rgba(2, 63, 5, 0.59), rgba(0, 0, 0, 0)), url('/friends.jpg')` }}
       >
         <div className="absolute inset-0 bg-opacity-40"></div>
         
