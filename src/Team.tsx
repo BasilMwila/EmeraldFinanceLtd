@@ -127,7 +127,7 @@ const TeamComponent: React.FC = () => {
               <div className="text-center transform hover:scale-105 transition-all duration-300">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
                   <img 
-                    src="/chibuye.jpeg" 
+                    src="/chibuye.jpg" 
                     alt="Chibuye Susa"
                     className="w-full h-full object-cover"
                   />
