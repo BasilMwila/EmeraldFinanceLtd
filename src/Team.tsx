@@ -170,7 +170,7 @@ const TeamComponent: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Stephanie Chilando</h3>
+                <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Stephanie Chilanda</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Customer Care Representative</p>
               </div>
             </div>
