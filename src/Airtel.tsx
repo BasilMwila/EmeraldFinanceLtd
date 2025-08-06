@@ -117,7 +117,7 @@ const AirtelComponent: React.FC = () => {
             {/* Left Content */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16 ">
                   How to Register for a Ka'Starta loan on Airtel Money.
                 </h1>
                 
@@ -208,7 +208,7 @@ const AirtelComponent: React.FC = () => {
           <div className="relative z-10 min-h-screen flex flex-col lg:flex-row py-20">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16">
                   How to get a loan on airtel money.
                 </h1>
                 
@@ -281,7 +281,7 @@ const AirtelComponent: React.FC = () => {
                   </div>
                   
                   <div className="bg-white text-black rounded-3xl p-4 shadow-xl border-4 border-black w-48 h-90 transform hover:scale-105 transition-all duration-300">
-                    <div className="space-y-3">
+                    <div className="space-y-3 mt-16">
                       <p className="text-xs mt-24">Welcome to Ka'Starta loan service</p>
                       
                       <div className="space-y-3 mt-8">
@@ -328,7 +328,7 @@ const AirtelComponent: React.FC = () => {
           <div className="relative z-10 min-h-screen flex flex-col lg:flex-row py-20">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16 ">
                   How to Repay a loan on airtel money.
                 </h1>
                 

@@ -116,7 +116,7 @@ const MTNComponent: React.FC = () => {
           <div className="relative z-10 min-h-screen flex flex-col lg:flex-row py-20">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16">
                   How to Register for a Ka'Starta loan on MTN.
                 </h1>
               </div>
@@ -257,7 +257,7 @@ const MTNComponent: React.FC = () => {
           <div className="relative z-10 min-h-screen flex flex-col lg:flex-row py-20">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16">
                   How to get a loan on MTN.
                 </h1>
               </div>
@@ -402,7 +402,7 @@ const MTNComponent: React.FC = () => {
           <div className="relative z-10 min-h-screen flex flex-col lg:flex-row py-20">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-6 lg:py-12">
               <div className="text-white max-w-lg slide-in-left text-center lg:text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-8 leading-tight mt-16">
                   How to Repay a loan on MTN.
                 </h1>
               </div>
