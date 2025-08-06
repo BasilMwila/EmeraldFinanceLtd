@@ -585,10 +585,10 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
             {/* Partner Labels */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-12 text-xs sm:text-sm lg:text-base">
-              <div className="text-gray-700 font-medium text-center">Emerald Finance</div>
+              {/* <div className="text-gray-700 font-medium text-center">Emerald Finance</div>
               <div className="text-gray-700 font-medium text-center">MTN MoMo</div>
               <div className="text-gray-700 font-medium text-center">Airtel Money</div>
-              <div className="text-gray-700 font-medium text-center">Ezra World</div>
+              <div className="text-gray-700 font-medium text-center">Ezra World</div> */}
             </div>
           </div>
         </div>
