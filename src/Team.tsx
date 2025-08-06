@@ -154,7 +154,7 @@ const TeamComponent: React.FC = () => {
                 <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
                   <img 
                     src="/Elizabeth.jpg" 
-                    alt="Basil Mwila"
+                    alt="Elizabeth Mubanga"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -162,12 +162,16 @@ const TeamComponent: React.FC = () => {
                 <p className="text-xs sm:text-sm text-gray-600">Customer Care Representative</p>
               </div>
 
-              <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-full mx-auto mb-3 lg:mb-4 flex items-center justify-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gray-400 rounded-full"></div>
+               <div className="text-center transform hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-3 lg:mb-4 overflow-hidden rounded-full border-4 border-emerald-600 shadow-lg">
+                  <img 
+                    src="/stephanie.jpg" 
+                    alt="stephanie Chilando"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Stephanie Chilande</h3>
-                <p className="text-xs sm:text-sm text-gray-600">Customer care Representative</p>
+                <h3 className="font-bold text-sm sm:text-base lg:text-lg text-gray-800">Stephanie Chilando</h3>
+                <p className="text-xs sm:text-sm text-gray-600">Customer Care Representative</p>
               </div>
             </div>
 
