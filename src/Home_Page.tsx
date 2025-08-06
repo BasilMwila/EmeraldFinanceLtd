@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const EmeraldFinanceHomepage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -389,18 +390,35 @@ const EmeraldFinanceHomepage: React.FC = () => {
 
               {/* Right Content - Social Icons */}
               <div className="lg:absolute lg:bottom-8 lg:right-8 slide-in-right mt-8 lg:mt-0">
-                <div className="flex lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 justify-center">
-                  <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110">
-                    <span className="text-sm sm:text-lg font-bold">f</span>
-                  </a>
-                  <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110">
-                    <span className="text-sm sm:text-lg font-bold">𝕏</span>
-                  </a>
-                  <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110">
-                    <span className="text-sm sm:text-lg font-bold">📷</span>
-                  </a>
-                </div>
-              </div>
+  <div className="flex lg:flex-col space-x-4 lg:space-x-0 lg:space-y-4 justify-center">
+    {/* Facebook */}
+    <a 
+      href="https://web.facebook.com/kastartazm" 
+      className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
+      aria-label="Follow us on Facebook"
+    >
+      <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
+    </a>
+    
+    {/* Instagram */}
+    <a 
+      href="https://www.instagram.com/ka_starta/" 
+      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-110"
+      aria-label="Follow us on Instagram"
+    >
+      <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+    </a>
+    
+    {/* LinkedIn */}
+    <a 
+      href="https://www.linkedin.com/company/finance-emerald/posts/?feedView=all" 
+      className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-700 rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition-all duration-300 transform hover:scale-110"
+      aria-label="Connect with us on LinkedIn"
+    >
+      <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+    </a>
+  </div>
+</div>
             </div>
           </div>
         </div>
