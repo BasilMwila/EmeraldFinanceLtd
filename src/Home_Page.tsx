@@ -511,7 +511,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Emerald finance will exist to empower people economically. We will be giving access to small loans for consumption, conveniently and affordable to a new generation of credit application based on forward looking data and predictive models rather than their past performance.
                 </p>
                 <p>
-                  To achieve this, we have partnered with <span className="text-yellow-400 font-semibold">MTN Zambia and Airtel Zambia</span> to give loans to the registered MTN and Airtel Money Mobile Money Subscribers, including consumers and the agents. The loans are under the Ka'Starta Brand.
+                  To achieve this, we have partnered with <span className="text-yellow-400 font-semibold">MTN Zambia and Airtel Zambia</span> to give loans to the registered MTN and Airtel Money Subscribers, including consumers and the agents. The loans are under the Ka'Starta Brand.
                 </p>
               </div>
               
@@ -684,7 +684,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Lending
                 </h2>
                 
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-gray-200">
+                <p className="text-sm text-black sm:text-base lg:text-lg xl:text-xl leading-relaxed text-black">
                   Tailored micro-loans for individuals and local agents. We understand the unique needs of Zambia's entrepreneurs and provide customized financial solutions.
                 </p>
               </div>
@@ -706,7 +706,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Financing
                 </h2>
                 
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-gray-200">
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed text-black">
                   Specialized lending solutions for local merchants and small businesses. Help grow your business with accessible credit designed for the Zambian market.
                 </p>
               </div>
@@ -727,7 +727,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
         <div className="absolute inset-0 bg-opacity-40"></div>
         
         <div className="relative z-10 min-h-screen px-4 sm:px-6 lg:px-16 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="flex flex-col lg:flex-row items-center gap-8 mt-32">
             {/* Left - Puzzle Image */}
             <div className="flex-shrink-0 slide-in-left order-2 lg:order-1">
               <div className="w-32  sm:w-40 lg:w-48 h-32 sm:h-40 lg:h-48 rounded-tl-2xl border-white border-2 bg-opacity-100 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
