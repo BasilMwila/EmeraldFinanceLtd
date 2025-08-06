@@ -181,6 +181,8 @@ const ContactComponent: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-1">Phone Number</h3>
                     <p className="text-gray-600">+260 96 9875058</p>
+                    <p className="text-gray-600">+260 96 9873678</p>
+                    <p className="text-gray-600">+260 77 2383806</p>
                     <p className="text-sm text-gray-500">For customer support: *115#</p>
                   </div>
                 </div>
