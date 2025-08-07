@@ -508,7 +508,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-400 mb-6 lg:mb-8 mt-16">Objective</h2>
               <div className="text-white space-y-4 lg:space-y-6 text-sm sm:text-base lg:text-lg leading-relaxed">
                 <p>
-                  Emerald finance will exist to empower people economically. We will be giving access to small loans for consumption, conveniently and affordable to a new generation of credit application based on forward looking data and predictive models rather than their past performance.
+                  Emerald finance exist to empower people economically by giving access to small loans for consumption-conveniently and affordable to a new generation of credit application based on forward looking data and predictive models rather than their past performance.
                 </p>
                 <p>
                   To achieve this, we have partnered with <span className="text-yellow-400 font-semibold">MTN Zambia and Airtel Zambia</span> to give loans to the registered MTN and Airtel Money Subscribers, including consumers and the agents. The loans are under the Ka'Starta Brand.
