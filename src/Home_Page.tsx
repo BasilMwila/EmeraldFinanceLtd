@@ -446,7 +446,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
                   Founded in <span className="font-semibold text-white">2020</span> and licensed by the Bank of Zambia, Emerald Finance Limited is a leading microfinance institution based in <span className="font-semibold text-white">Lusaka</span>. We are dedicated to serving Zambia's underserved populations by providing fair and reliable credit through innovative digital channels.
                 </p>
                 <p>
-                  We specialize in digital micro-lending under our flagship <span className="font-semibold text-yellow-300">brand Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
+                  We specialize in digital micro-lending under our flagship brand<span className="font-semibold text-yellow-300">Ka'Starta</span>, offering tailored micro-loans for individuals, agents, and local merchants directly through mobile money and smartphone access.
                 </p>
               </div>
               {/* <button className="mt-6 lg:mt-8 bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-yellow-500 transition-all duration-300 border-2 border-yellow-400 transform hover:scale-105 text-sm sm:text-base">
