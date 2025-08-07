@@ -532,7 +532,7 @@ const EmeraldFinanceHomepage: React.FC = () => {
               <div className="bg-slate-400 p-4 sm:p-6 transform hover:scale-105 transition-all duration-300">
                 <h3 className="text-xl sm:text-2xl font-bold text-yellow-300 mb-3 lg:mb-4">Our Vision</h3>
                 <p className="text-white text-sm sm:text-base">
-                  Is to provide financial solutions to the unbanked and SME's.
+                  Is to provide financial solutions to the unbanked and underserved.
                 </p>
               </div>
 
